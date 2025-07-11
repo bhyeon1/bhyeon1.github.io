@@ -2,7 +2,7 @@ name: Build and Deploy Jekyll site to Pages
 
 on:
   push:
-    branches: [ main ]  # ✅ 여기를 main 으로 수정
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -17,32 +17,32 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-OAOAOA    steps:
-OAOAOA      - name: Checkout
-OAOAOA        uses: actions/checkout@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-OAOAOA      - name: Setup Ruby
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
           bundler-cache: true
 
-      - name: Install dependencies  # ✅ 추가된 부분
+      - name: Install dependencies
         run: bundle install
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-OAOAOA      - name: Build with Jekyll
+      - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
-OAOAOA          JEKYLL_ENV: production
+          JEKYLL_ENV: production
 
-OAOAOA      - name: Upload artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
-OAOAOA  deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
