@@ -1,0 +1,33 @@
+/* Rouge 하이라이트 최상위 컨테이너를 강제로 키웁니다 */
+.highlight,
+.highlight pre,
+.highlight code {
+    font-size: 25px !important;
+    line-height: 1.5 !important;
+}
+
+/* figure 전체 외부 여백: 위아래 1em, 좌우 0.5em */
+figure.highlight {
+    margin: 1em 0.5em !important;
+    padding: 0.5em !important;
+}
+
+/* Rouge 테이블 자체 마진/패딩 */
+figure.highlight .rouge-table {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+}
+
+/* gutter(줄 번호)와 code 영역 안쪽 여백: 위아래 0.5em, 좌우 1em */
+figure.highlight .rouge-table td.gutter,
+figure.highlight .rouge-table td.code {
+    padding: 0.5em 1em !important;
+}
+
+/* <pre> 태그 여백 초기화 후, 필요하면 약간 패딩 추가 */
+figure.highlight pre {
+    margin: 0 !important;
+    padding: 0.2em 0 !important;
+}
