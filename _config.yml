@@ -25,6 +25,9 @@ disqus:
   # shortname: my_disqus_shortname
   shortname: csrhymes
 
+#asset_version : 2
+#video_version : 2
+
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
@@ -52,7 +55,7 @@ sass:
   # - node_modules
 
 #google_analytics: UA-code-here
-cookie_policy: /cookie-policy/
+cookie_policy: false
 
 defaults:
   - scope:
