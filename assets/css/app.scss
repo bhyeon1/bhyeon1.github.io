@@ -1,5 +1,18 @@
 ---
 ---
 
-// Import Main CSS file from theme
 @import "main";
+
+// 여기서부터 추가 CSS
+.card.hover-effect {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card.hover-effect:hover {
+  transform: scale(0.97);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

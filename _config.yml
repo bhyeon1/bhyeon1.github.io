@@ -1,15 +1,14 @@
 # Site Settings
-lang: en
+lang: ko
 title: Hyeon's Portfolio
-tagline: Bulma Clean Theme
-email: your-email@domain.com
-description: >
-  The demo site for Bulma Clean Theme, made for Jekyll and GitHub pages websites
-baseurl: "/bulma-clean-theme"
+tagline: ""
+email: hyunkt1377@gmail.com
+description: ""
+baseurl: ""
 url: "https://bhyeon1.github.io"
 permalink: pretty
 #favicon: /path/to/favicon.png
-gh_sponsor: chrisrhymes
+#gh_sponsor: chrisrhymes
 #hide_share_buttons: true
 #theme_color: '#eeeeee'
 #fixed_navbar: top
@@ -26,7 +25,6 @@ disqus:
   # shortname: my_disqus_shortname
   shortname: csrhymes
 
-
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
@@ -35,7 +33,7 @@ plugins:
   - kramdown-parser-gfm
   - jekyll-redirect-from
 
-exclude: 
+exclude:
   - Gemfile
   - clean-theme.gemspec
   - Gemfile.lock
@@ -50,21 +48,19 @@ livereload: true
 sass:
   style: compressed
   source_dir: _sass
-  # load_paths: 
-    # - node_modules
+  # load_paths:
+  # - node_modules
 
 #google_analytics: UA-code-here
 cookie_policy: /cookie-policy/
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       show_sidebar: true
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
@@ -79,17 +75,15 @@ highlighter: rouge
 footer_menu: example_footer_menu
 
 collections:
-  products: 
+  projects:
     output: true
     layout: product
-    image: https://picsum.photos/id/16/800/600
+    #image: https://picsum.photos/id/16/800/600
     show_sidebar: false
+    permalink: /projects/:name/
 
 social:
-  facebook: https://www.facebook.com/
-  instagram: https://www.instagram.com/
-  threads: https://www.threads.net/
-  tiktok: https://www.tiktok.com/
-  x: https://www.x.com/
-  youtube: https://www.youtube.com/
-  
+  github: https://github.com/bhyeon1
+
+stylesheets:
+  - /assets/css/custom.css
