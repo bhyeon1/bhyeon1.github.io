@@ -14,23 +14,33 @@ show_sidebar: false
 <br>
 
 <div class="columns is-multiline">
-  {% for project in site.projects %}
+  {% assign items = site.projects | sort: "order" %}
+  {% for project in items %}
     <div class="column is-one-third">
-      <a href="{{ project.url }}" style="text-decoration: none; color: inherit;">
+      <a href="{{ project.url | relative_url }}" style="text-decoration: none; color: inherit;">
         <div class="card hover-effect">
           <div class="card-image">
             <figure class="image is-4by3">
               <img src="{{ project.image }}" alt="{{ project.title }}">
             </figure>
           </div>
+
           <div class="card-content">
             <p class="title is-5">{{ project.title }}</p>
             <p class="subtitle is-6">{{ project.subtitle }}</p>
             <p>{{ project.description | truncate: 100 }}</p>
+
+            {% if project.tags %}
+            
+            <div class="tags mt-3">
+              {% for t in project.tags %}
+                <span class="tag is-link is-light">{{ t }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
         </div>
       </a>
     </div>
   {% endfor %}
-
 </div>

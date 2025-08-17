@@ -1,33 +1,155 @@
-/* Rouge 하이라이트 최상위 컨테이너를 강제로 키웁니다 */
+/* -------- Rouge code block base -------- */
+figure.highlight,
+.highlight {
+    --code-bg: #0d1117;
+    /* 다크 배경 */
+    --code-fg: #e6edf3;
+    /* 기본 글자색 */
+    --gutter-bg: #0b1220;
+    /* 줄번호 영역 */
+    --gutter-fg: #9aa0a6;
+    --rule: #1f2633;
+
+    background: var(--code-bg);
+    color: var(--code-fg);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 8px 24px rgba(0, 0, 0, .08);
+    overflow: auto;
+    margin: 1rem 0;
+    /* 위아래 간격 */
+}
+
+/* 폰트/크기: 화면 폭에 맞춰 유연하게 */
 .highlight,
 .highlight pre,
 .highlight code {
-    font-size: 25px !important;
-    line-height: 1.5 !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: clamp(20px, 1.4rem, 24px);
+    line-height: 1.6;
 }
 
-/* figure 전체 외부 여백: 위아래 1em, 좌우 0.5em */
-figure.highlight {
-    margin: 1em 0.5em !important;
-    padding: 0.5em !important;
-}
-
-/* Rouge 테이블 자체 마진/패딩 */
+/* Rouge가 linenos 켜면 table 구조를 만듦 */
 figure.highlight .rouge-table {
-    margin: 0.5em 0 !important;
-    padding: 0 !important;
-    border-spacing: 0 !important;
-    border-collapse: collapse !important;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 0;
 }
 
-/* gutter(줄 번호)와 code 영역 안쪽 여백: 위아래 0.5em, 좌우 1em */
+/* 줄번호(gutter)와 코드 영역 패딩 */
 figure.highlight .rouge-table td.gutter,
 figure.highlight .rouge-table td.code {
-    padding: 0.5em 1em !important;
+    padding: .6rem .9rem;
+    vertical-align: top;
 }
 
-/* <pre> 태그 여백 초기화 후, 필요하면 약간 패딩 추가 */
-figure.highlight pre {
-    margin: 0 !important;
-    padding: 0.2em 0 !important;
+/* 줄번호 컬럼 */
+figure.highlight .rouge-table td.gutter {
+    background: var(--gutter-bg);
+    color: var(--gutter-fg);
+    width: 3.5rem;
+    border-right: 1px solid var(--rule);
+    text-align: right;
+    user-select: none;
 }
+
+.highlight .lineno {
+    opacity: .85;
+}
+
+/* 코드 본문 */
+figure.highlight .rouge-table td.code {
+    width: auto;
+}
+
+/* <pre> 기본 여백 초기화 */
+figure.highlight pre {
+    margin: 0;
+    white-space: pre;
+}
+
+/* 가로 스크롤 부드럽게 */
+.highlight {
+    scrollbar-width: thin;
+}
+
+.highlight::-webkit-scrollbar {
+    height: 9px;
+}
+
+.highlight::-webkit-scrollbar-thumb {
+    background: #2a3241;
+    border-radius: 6px;
+}
+
+/* -------- Rouge token colors (C 친화 팔레트) -------- */
+/* 주석 */
+.highlight .c,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs {
+    color: #8b949e;
+    font-style: italic;
+}
+
+/* 키워드: typedef, struct, if, return 등 */
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kr,
+.highlight .kt {
+    color: #ff7b72;
+    font-weight: 600;
+}
+
+/* 타입(내장): int, char 등 */
+.highlight .kt {
+    color: #79c0ff;
+}
+
+/* 전처리: #include, #define */
+.highlight .cp,
+.highlight .cpf {
+    color: #d2a8ff;
+}
+
+/* 숫자 */
+.highlight .m,
+.highlight .mi,
+.highlight .mf {
+    color: #79c0ff;
+}
+
+/* 문자열/문자 */
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .se,
+.highlight .sr {
+    color: #a5d6ff;
+}
+
+/* 함수명 */
+.highlight .nf {
+    color: #7ee787;
+}
+
+/* 식별자(일반 이름) */
+.highlight .n,
+.highlight .na,
+.highlight .nx {
+    color: var(--code-fg);
+}
+
+/* 연산자/구두점 */
+.highlight .o,
+.highlight .p {
+    color: #e6edf3;
+}
+
+/* 프로젝트 카드 하단 태그만 크게 */
+.card .tags .tag{
+  font-size: 0.9rem;     /* 기본보다 큼 */
+  padding: .45em .7em;    /* 안쪽 여백 증가 */
+}
+.card .tags { gap: .4rem; }     /* 태그 간 간격 */
