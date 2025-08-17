@@ -5,5 +5,7 @@
   dropdown:
     - name: The Strange Adventure
       link: /projects/game_project/
+    - name: Multi Sensing Watch
+      link: /projects/Multi_Sensing_Watch/
 - name: Contact
   link: /contact/

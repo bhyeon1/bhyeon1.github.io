@@ -1,19 +1,19 @@
 ---
-title: The Strange Adventure
-order : 1
-subtitle: STM32 기반 장애물 회피 2D 게임 프로젝트
+title: Microwave project
+order : 3
+subtitle: FPGA 기반 PWM 제어 및 사용자 인터페이스 설계를 통해 모터 구동형 전자레인지 기능 구현
 description: ""
 layout: page
-permalink: /projects/game_project
-image: /img/game_project/game_project_image.jpg
-tags : [C]
+permalink: /projects/Microwave
+image: /img/microwave/title.jpg
+tags : [Vivado, FPGA, Verilog]
 ---
 
 <br>
 
 <!-- ✅ 중앙 정렬된 이미지 -->
 <div style="text-align: center;">
-  <img src="/img/game_project/game_project_image.jpg" alt="게임 이미지" style="max-width: 600px; width: 90%; border-radius: 12px;" />
+  <img src="/img/watch/title.jpg" style="max-width: 1200px; width: 80%; border-radius: 12px;" />
 </div>
 
 <br>
@@ -22,29 +22,39 @@ tags : [C]
 
 <h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">프로젝트 기간</h2>
 <p style="font-size: 26px; line-height: 1.4; margin-left: 10px;">
-2025.04.25 ~ 2025.05.04
+2025.05.29 ~ 2025.06.02
 </p>
 
 <h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">목적</h2>
-<p style="font-size: 26px; line-height: 1.4; margin-left: 10px;">
-STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 및 GPIO 포트 활용 능력을 향상시키고, 타이머 인터럽트 기반 게임 루프 제어 및 사용자 입력 처리로 Event-Driven 프로그래밍 설계 역량을 강화하는 것을 목표로 함.
-</p>
+<ul style="font-size: 26px; line-height: 1.4; margin-left: 30px;">
+  <li>센서 입력 수집 : DHT11(온·습도), HC-SR04(초음파), 버튼 동기화</li>
+  <li>센서 제어·데이터 처리: 타이밍 FSM, checksum 검증</li>
+  <li>디스플레이 전환 제어: 선택 센서 값 MUX → FND 다중화 출력</li>
+  <li>실시간 시각화: 주기적 갱신으로 상태 모니터링</li>
+</ul>
 
 <h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">하드웨어</h2>
 <ul style="font-size: 26px; line-height: 1.4; margin-left: 30px;">
-  <li>MCU : 72MHz ARM Cortex-M3 프로세서</li>
-  <li>디스플레이 : 320x240 해상도 컬러 LCD 디스플레이</li>
-  <li>입력 장치 : Jog 키, push button (KEY0, KEY1)</li>
-  <li>통신 방식 : UART (보드 <-> 데스크탑)</li>
+  <li>Basys 3 (FPGA 보드)
+    <ul>
+      <li>클럭 입력: 100 MHz</li>
+      <li>I/O 전압: 3.3 V LVCMOS</li>
+    </ul>
+  </li>
+  <li>HC-SR04 (초음파 센서)
+    <ul>
+      <li>측정 거리 : 2~400cm</li>
+      <li>트리거 입력 신호 : 10us TTL</li>
+    </ul>
+  </li>  
+  <li>DHT11 (온·습도 센서)
+    <ul>
+      <li>온도 범위 : 0 ~ 50ºC</li>
+      <li>습도 범위 : 20 ~ 90 % RH</li>
+      <li>전원 공급 : 3 ~ 5.5 VDC</li>
+    </ul>
+  </li>  
 </ul>
-
-<h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">주요 기능</h2>
-<ul style="font-size: 26px; line-height: 1.4; margin-left: 30px;">
-  <li>Jog키를 사용하여 플레이어 이동 기능 구현</li>
-  <li>button을 사용하여 플레이어의 점프 기능 구현 (플랫폼 올라타기, 머리 박음 판정)</li>
-  <li>움직이는 장애물 및 총알 발사 기능 구현</li>
-  <li>UART를 통해 Clear time, Death count를 Display</li>
-</ul> <br>
 
 ---
 <br>
