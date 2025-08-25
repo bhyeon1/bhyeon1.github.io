@@ -18,36 +18,36 @@ tags : [Vivado, FPGA, Verilog]
 
 <br>
 
-<h1 style="font-size: 44px; font-weight: bold;">개요</h1>
+<h1 style="font-size: 36px; font-weight: bold;">개요</h1>
 
-<h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">프로젝트 기간</h2>
-<p style="font-size: 26px; line-height: 1.4; margin-left: 10px;">
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">프로젝트 기간</h2>
+<p style="font-size: 18px; line-height: 1.4; margin-left: 10px;">
 2025.05.29 ~ 2025.06.02
 </p>
 
-<h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">목적</h2>
-<ul style="font-size: 26px; line-height: 1.4; margin-left: 30px;">
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">목적</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
   <li>센서 입력 수집 : DHT11(온·습도), HC-SR04(초음파), 버튼 동기화</li>
   <li>센서 제어·데이터 처리: 타이밍 FSM, checksum 검증</li>
   <li>디스플레이 전환 제어: 선택 센서 값 MUX → FND 다중화 출력</li>
   <li>실시간 시각화: 주기적 갱신으로 상태 모니터링</li>
 </ul>
 
-<h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">하드웨어</h2>
-<ul style="font-size: 26px; line-height: 1.4; margin-left: 30px;">
-  <li>Basys 3 (FPGA 보드)
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">하드웨어</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li><strong>Basys 3 (FPGA 보드)</strong>
     <ul>
       <li>클럭 입력: 100 MHz</li>
       <li>I/O 전압: 3.3 V LVCMOS</li>
     </ul>
   </li>
-  <li>HC-SR04 (초음파 센서)
+  <li><strong>HC-SR04 (초음파 센서)</strong>
     <ul>
       <li>측정 거리 : 2~400cm</li>
       <li>트리거 입력 신호 : 10us TTL</li>
     </ul>
   </li>  
-  <li>DHT11 (온·습도 센서)
+  <li><strong>DHT11 (온·습도 센서)</strong>
     <ul>
       <li>온도 범위 : 0 ~ 50ºC</li>
       <li>습도 범위 : 20 ~ 90 % RH</li>
@@ -58,10 +58,10 @@ tags : [Vivado, FPGA, Verilog]
 
 ---
 <br>
-<h1 style="font-size: 44px; font-weight: bold;">개발 결과</h1>
+<h1 style="font-size: 36px; font-weight: bold;">주요 기능</h1>
 
 <h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">스테이지 구성</h2>
-<p style="font-size: 26px; line-height: 1.4; margin-left: 10px;">
+<p style="font-size: 30px; line-height: 1.4; margin-left: 10px;">
 3개의 난이도(level 1, level 2, level 3)가 있고, 각 난이도마다 3개의 stage로 총 9개의 stage로 구성.
 </p>
 
@@ -149,7 +149,7 @@ static int IsCollide(QUERY_DRAW *a, QUERY_DRAW *b) {
   <li>기존 방식인 Full render는 20 x 20 px의 캐릭터를 2px 이동시킬 때, 20 x 20 영역을 지우고 20 x 20 영역을 다시 그림. 총 400px + 400px = 800px이 소요. </li>
   <li>새로운 방식인 delta render는 20 x 20 px의 캐릭터를 2px 이동시킬 때, 겹치는 20 x 2 영역만 지우고 20 x 2 영역만큼만 다시 그림. 총 40px + 40px = 80px이 소요. 즉, 훨씬 더 빠르게 rendering 가능.</li>
 </ul>
-<img src="/img/game_project/rendering.jpg" width="70%">
+<img src="/img/game_project/rendering.jpg" width="50%">
 
 <h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">6. BGM (PWM)</h2>
 <ul style="font-size: 26px; line-height: 1.4; margin-left: 30px;">
@@ -188,25 +188,25 @@ const Note bgmTheme[] = {
 ---
 
 <br>
-<h1 style="font-size: 44px; font-weight: bold;">트러블 슈팅</h1>
+<h1 style="font-size: 36px; font-weight: bold;">트러블 슈팅</h1>
 
-<h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">1. 점프 동작 개선</h2>
-<ul style="font-size: 26px; line-height: 1.4; margin-left: 30px;">
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">1. 점프 동작 개선</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
   <li>문제 : 입력 타이머 기반 점프 -> 에어 컨트롤(점프 후 좌우이동) 부자연스러움.</li>
   <li>접근 : Systic 타이머 기반 고정 dt physics 업데이트 + FSM 으로 수직, 수평 순으로 충돌 해소. </li>
   <li>처리 : 이동 플랫폼 상대속도 반영, 천장/벽 충돌 시 속도 클램핑 + 위치 보정. </li>
   <li>결과 : 점프 중 좌우 제어 일관성·응답성 향상, 머리 박음·벽 끼임 제거, 안정적 착지. </li>
 </ul>
 
-<h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">2. rendering 개선</h2>
-<ul style="font-size: 26px; line-height: 1.4; margin-left: 30px;">
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">2. rendering 개선</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
   <li>문제 : 전체 refresh 기반 rendering -> object 증가 시 jittering 발생.</li>
   <li>접근 : Delta rendering 적용 -> 이전 / 현재 위치의 차이 영역 (Dirty Rect)만 갱신. </li>
   <li>결과 : 불필요한 지우기 / 그리기 최소화 -> jittering 해소, 프레임 안정성 개선. </li>
 </ul>
 
-<h2 style="font-size: 30px; font-weight: bold; margin-top: 1.6em;">3. RAM overflow</h2>
-<ul style="font-size: 26px; line-height: 1.4; margin-left: 30px;">
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">3. RAM overflow</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
   <li>문제 : C:\CodeSourcery\Sourcery G++ Lite/bin/arm-none-eabi-ld: region RAM' overflowed by 10544 bytes 오류로 bin 파일 생성 실패.
   </li>
   <li>접근 : 메모리 사용량을 줄이기 위해 구조체 타입 및 매크로 상수 최적화</li>
