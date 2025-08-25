@@ -24,7 +24,7 @@ figure.highlight,
 .highlight pre,
 .highlight code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-    font-size: clamp(20px, 1.4rem, 24px);
+    font-size: clamp(14px, 1.4rem, 14px);
     line-height: 1.6;
 }
 
@@ -148,8 +148,45 @@ figure.highlight pre {
 }
 
 /* 프로젝트 카드 하단 태그만 크게 */
-.card .tags .tag{
-  font-size: 0.9rem;     /* 기본보다 큼 */
-  padding: .45em .7em;    /* 안쪽 여백 증가 */
+.card .tags .tag {
+    font-size: 0.9rem;
+    /* 기본보다 큼 */
+    padding: .45em .7em;
+    /* 안쪽 여백 증가 */
 }
-.card .tags { gap: .4rem; }     /* 태그 간 간격 */
+
+.card .tags {
+    gap: .4rem;
+}
+
+/* 태그 간 간격 */
+
+/* 적용 범위를 페이지 본문으로 제한 (다른 영역 영향 최소화) */
+#main-content li>strong,
+#main-content li>.sensor-title {
+    display: inline;
+    /* block으로 바뀌어 있으면 inline으로 복원 */
+    font-weight: 700;
+    /* 굵게 유지 */
+    margin: 0;
+    /* 여백 제거 */
+    padding: 0;
+    font-size: inherit;
+    /* 부모 폰트 크기 그대로 */
+    line-height: 1.2;
+    /* 제목의 줄 높이 (필요 시 1.1~1.3 조정) */
+}
+
+/* 제목 바로 아래의 하위 리스트 간격을 줄인다 */
+#main-content li>strong+ul,
+#main-content li>.sensor-title+ul {
+    margin-top: 0.18em;
+    /* 기본보다 작게 (원하면 0 또는 0.1em) */
+    padding-top: 0;
+}
+
+/* li 자체의 하단 간격도 약간 조정 (목록 전체 간격을 자연스럽게 조절) */
+#main-content li {
+    margin-bottom: 0.35em;
+    /* 필요 시 0.2~0.6em 범위로 조정 */
+}

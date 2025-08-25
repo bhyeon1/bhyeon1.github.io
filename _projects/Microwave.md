@@ -1,7 +1,7 @@
 ---
 title: Microwave project
 order : 3
-subtitle: FPGA 기반 PWM 제어 및 사용자 인터페이스 설계를 통해 모터 구동형 전자레인지 기능 구현
+subtitle: FPGA 기반 모터 구동형 전자레인지 기능 구현
 description: ""
 layout: page
 permalink: /projects/Microwave

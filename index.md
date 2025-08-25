@@ -5,7 +5,7 @@ subtitle: Welcome to my portfolio site.
 show_sidebar: false
 ---
 
-<p style="font-size: 26px; line-height: 1.6;">
+<p style="font-size: 20px; line-height: 1.6;">
   안녕하세요 😊 <br>
   이 페이지는 제가 지금까지 진행한 하드웨어, 임베디드, AI 시스템 프로젝트들을 정리한 포트폴리오입니다.<br>
   각 프로젝트는 아래 카드에서 확인할 수 있어요 :)
