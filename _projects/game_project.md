@@ -9,15 +9,6 @@ image: /img/game_project/game_project_image.jpg
 tags : [STM32, C]
 ---
 
-<br>
-
-<!-- ✅ 중앙 정렬된 이미지 -->
-<div style="text-align: center;">
-  <img src="/img/game_project/game_project_image.jpg" alt="게임 이미지" style="max-width: 500px; width: 80%; border-radius: 12px;" />
-</div>
-
-<br>
-
 <h1 style="font-size: 36px; font-weight: bold;">개요</h1>
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">프로젝트 기간</h2>
@@ -176,7 +167,6 @@ const Note bgmTheme[] = {
 
 ---
 
-<br>
 <h1 style="font-size: 36px; font-weight: bold;">트러블 슈팅</h1>
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">1. 점프 동작 개선</h2>
@@ -205,7 +195,6 @@ const Note bgmTheme[] = {
 
 ---
 
-<br>
 <h1 style="font-size: 36px; font-weight: bold;">결론 및 고찰</h1>
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">성과</h2>
