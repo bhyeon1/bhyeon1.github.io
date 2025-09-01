@@ -7,5 +7,11 @@
       link: /projects/game_project/
     - name: Multi Sensing Watch
       link: /projects/Multi_Sensing_Watch/
+    - name: Microwave project
+      link: /projects/Microwave/
+    - name: 512-Point Radix-8 FFT Processor
+      link: /projects/fft_processor/
+    - name: RV32I CPU Architecture
+      link: /projects/RV32I_CPU/
 - name: Contact
   link: /contact/
