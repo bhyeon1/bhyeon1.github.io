@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hyeon's Portfolio
-subtitle: Welcome to my portfolio site.
+title: 김병현의 포트폴리오
+subtitle: 포기하지 않는 자세로 끊임없이 노력하여 성장하는 신입 개발자
 show_sidebar: false
 ---
 

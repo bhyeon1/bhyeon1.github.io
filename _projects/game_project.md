@@ -1,6 +1,6 @@
 ---
 title: The Strange Adventure
-order : 1
+order : 4
 subtitle: STM32 기반 장애물 회피 2D 게임 프로젝트
 description: ""
 layout: page
@@ -191,8 +191,30 @@ const Note bgmTheme[] = {
   <li>접근 : 메모리 사용량을 줄이기 위해 구조체 타입 및 매크로 상수 최적화</li>
   <li>결과 : 동일 기능 유지 상태에서 RAM 사용량 대폭 감소 -> RAM overflow 해소 </li>
 </ul>
-<img src="/img/game_project/overflow.jpg" width="100%">
 
+```c
+// 매크로 상수 최적화
+#define MAX_STAGE               (9)
+#define MAX_PLATFORMS           (11)
+#define MAX_OBSTACLES           (6)
+#define MAX_SHOOTERS            (1)
+#define MAX_BULLETS_PER_SHOOTER (5)
+
+// 구조체 타입 최적화
+typedef signed char s8; typedef unsigned char u8; typedef signed short u8; typedef unsigned short u16;
+
+typedef struct {
+  u16 x, y;
+  u16 w, h;
+  u8 ci;
+} QUERY_DRAW;
+
+typedef struct {
+  s8  vx, vy;
+  s16 min_x, max_x;
+  s16 min_y, max_y;
+} PlatformCfg;
+```
 ---
 
 <h1 style="font-size: 36px; font-weight: bold;">결론 및 고찰</h1>

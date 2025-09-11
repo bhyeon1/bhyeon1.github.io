@@ -3,15 +3,19 @@
 - name: Projects
   link: /#
   dropdown:
+    - name: FFT Processor
+      link: /projects/fft_processor/
+    - name: RISC-V CPU
+      link: /projects/RV32I_CPU/
+    - name: AMBA_APB Bus & AXI4 Protocol
+      link: /projects/amba_bus/
     - name: The Strange Adventure
       link: /projects/game_project/
     - name: Multi Sensing Watch
       link: /projects/Multi_Sensing_Watch/
-    - name: Microwave project
+    - name: Microwave system
       link: /projects/Microwave/
-    - name: 512-Point Radix-8 FFT Processor
-      link: /projects/fft_processor/
-    - name: RV32I CPU Architecture
-      link: /projects/RV32I_CPU/
+    - name: AI Parking Lot
+      link: /projects/AI_OnDevice/
 - name: Contact
   link: /contact/

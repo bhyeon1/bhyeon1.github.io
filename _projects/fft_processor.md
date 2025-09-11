@@ -1,6 +1,6 @@
 ---
 title: 512-Point Radix-8 FFT Processor
-order : 4
+order : 1
 subtitle: ASIC 기반 512-Point FFT 프로세서 설계 및 FPGA 검증
 description: ""
 layout: page
@@ -93,8 +93,11 @@ tags : [ASIC, FPGA, VCS/Verdi, SystemVerilog, MATLAB]
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">4. SQNR 결과</h2>
 <p style="font-size: 18px; line-height: 1.4; margin-left: 10px;">
-  SQNR : 신호 대 잡음 비로 Fixed-point 설계의 정확도 손실을 수치화할수 있는 지표
+  SQNR : 신호 대 잡음 비로 Fixed-point 설계의 정확도 손실을 수치화할수 있는 지표 <br>
+  40dB이상의 SQNR 확보 성공.
 </p>
+
+
 
 <img src="/img/fft/cos_ran.jpg" width="50%">
 
@@ -188,8 +191,15 @@ tags : [ASIC, FPGA, VCS/Verdi, SystemVerilog, MATLAB]
     <li>초기 설계 : valid_in 입력 시 DELAY 후 32 클럭 연산, 완료 시 자동 리셋되는 FSM 구조</li>
     <li>문제점 : 두 번째 valid_in 입력 시 연산 결과가 의도하지 않은 값으로 달라지는 문제를 확인.</li>
     <li>원인 분석 : 기존 FSM은 순차 동작만 인식 32clk on, 8clk off가 되는 동작에서 다음 32clk이 들어올 때 <br> 기존 FSM 상태 전이가 끝나지 않아서 연산 타이밍이 꼬임.</li>
-    <li>해결 방안 : 초기 delay(32clk -> 16clk -> 8clk -> ...)인 wait_cnt와 valid 신호를 32clk 동안 띄우는 region_cnt의 FSM을 분리하여 <br> 독립적으로 진행되는 방식으로 설계</li>
+    <li>해결 방안 : 초기 delay(16clk -> 8clk -> 4clk -> ...)인 wait_cnt와 valid 신호를 32clk 동안 띄우는 region_cnt의 FSM을 분리하여 <br> 독립적으로 진행되는 방식으로 설계</li>
   </ul>
 
   <img src="/img/fft/troubleshooting.jpg" width="100%">
   
+  <h1 style="font-size: 36px; font-weight: bold;">느낀점</h1>
+
+  <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+    <li>각 연산기에 따른 delay 차이를 이해하고 이에 맞춘 파이프 레지스터 배치 및 분할 전략을 체득함.</li>
+    <li>Verilog/SystemVerilog 문법 이해가 한층 깊어졌고, 테스트벤치 기반의 검증 프로세스를 설계하면서 HDL·검증 역량이 향상됨을 느낌.</li>
+    <li>실무 규모에 근접한 프로젝트에서 팀장을 맡아 일정에 따른 목표의 관리, 팀원의 역량에 따른 역할 분배에 대한 중요성을 경험했고, 효율적인 분업·협업 체계가 성과에 직결됨을 확인함.</li>
+  </ul>
