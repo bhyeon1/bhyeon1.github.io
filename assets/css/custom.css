@@ -190,3 +190,81 @@ figure.highlight pre {
     margin-bottom: 0.35em;
     /* 필요 시 0.2~0.6em 범위로 조정 */
 }
+
+/* 공통 폰트 변수 */
+:root {
+    --title-font: 'Black Han Sans', 'Noto Sans KR', sans-serif;
+    --body-font: 'Noto Sans KR', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
+}
+
+/* 본문 기본 폰트 */
+html,
+body {
+    font-family: var(--body-font);
+}
+
+/* 히어로 제목/부제 폰트 */
+section.hero .title {
+    font-family: var(--title-font);
+    font-weight: 400;
+    letter-spacing: .02em;
+}
+
+section.hero .subtitle {
+    font-family: var(--body-font);
+    font-weight: 500;
+}
+
+/* ===== Hero 타이틀/부제 컨트롤러 ===== */
+:root {
+    /* 크기: clamp(최소, 뷰포트 비율, 최대) */
+    --hero-title-size-min: 56px;
+    --hero-title-size-vw: 5vw;
+    --hero-title-size-max: 50px;
+
+    --hero-sub-size-min: 18px;
+    --hero-sub-size-vw: 2.5vw;
+    --hero-sub-size-max: 25px;
+
+    /* 간격 */
+    --hero-title-letter: 0.03em;
+    /* 자간(제목) */
+    --hero-sub-letter: 0.02em;
+    /* 자간(부제) */
+    --hero-title-line: 1.08;
+    /* 행간(제목) */
+    --hero-sub-line: 2;
+    /* 행간(부제) */
+    --hero-gap: 1.2rem;
+    /* 제목-부제 사이 간격 */
+    --hero-padding-y: 5rem;
+    /* 히어로 위/아래 여백 */
+}
+
+/* 히어로 전체 위아래 여백 */
+section.hero .hero-body {
+    padding-top: var(--hero-padding-y) !important;
+    padding-bottom: var(--hero-padding-y) !important;
+}
+
+/* 제목 */
+section.hero .title {
+    font-family: var(--title-font);
+    font-weight: 600;
+    /* Black Han Sans는 보통 400 */
+    font-size: clamp(var(--hero-title-size-min), var(--hero-title-size-vw), var(--hero-title-size-max));
+    letter-spacing: var(--hero-title-letter);
+    line-height: var(--hero-title-line);
+    margin: 0 0 var(--hero-gap) 0;
+    /* 아래쪽 간격만 */
+}
+
+/* 부제 */
+section.hero .subtitle {
+    font-family: var(--body-font);
+    font-weight: 500;
+    font-size: clamp(var(--hero-sub-size-min), var(--hero-sub-size-vw), var(--hero-sub-size-max));
+    letter-spacing: var(--hero-sub-letter);
+    line-height: var(--hero-sub-line);
+    margin: 0;
+}

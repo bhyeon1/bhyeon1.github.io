@@ -1,6 +1,6 @@
 ---
 title: RV32I CPU Architecture
-order : 5
+order : 2
 subtitle: FPGA 기반 RISC-V 32bit multi cycle CPU 설계
 description: ""
 layout: page
@@ -8,8 +8,6 @@ permalink: /projects/RV32I_CPU
 image: /img/RV32I_CPU/RISC-V.jpg
 tags : [Vivado, FPGA, VCS / Verdi ,SystemVerilog]
 ---
-
-<br>
 
 <h1 style="font-size: 36px; font-weight: bold;">개요</h1>
 
@@ -61,11 +59,11 @@ tags : [Vivado, FPGA, VCS / Verdi ,SystemVerilog]
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">I-Type 검증 결과</h2>
 <img src="/img/RV32I_CPU/IType.jpg" width="80%">
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">S-Type 검증 결과</h2>
-<img src="/img/RV32I_CPU/SType.jpg" width="80%">
+<img src="/img/RV32I_CPU/SType.jpg" width="60%">
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">B-Type 검증 결과</h2>
 <img src="/img/RV32I_CPU/RType.jpg" width="80%">
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">LU / AU / J / JL-Type 검증 결과</h2>
-<img src="/img/RV32I_CPU/L_JType.jpg" width="80%">
+<img src="/img/RV32I_CPU/L_JType.jpg" width="100%">
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">머신 코드 검증</h2>
 <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
   <li>설계한 CPU test를 위해 간단한 C 코드를 작성. (1+2+...+n을 할때 n 이상이 되는 마지막 정수 찾기) </li>
