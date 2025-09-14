@@ -4,7 +4,7 @@ order : 5
 subtitle: FPGA 기반 실시간 센서 통합 감지 시스템
 description: ""
 layout: page
-permalink: /projects/Multi_Sensing_Watch
+permalink: /projects/Multi_Sensing_Watch/
 image: /img/watch/basys3.jpg
 tags : [Vivado, FPGA, Verilog]
 ---

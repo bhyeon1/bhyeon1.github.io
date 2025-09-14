@@ -4,7 +4,7 @@ order : 2
 subtitle: FPGA 기반 RISC-V 32bit multi cycle CPU 설계
 description: ""
 layout: page
-permalink: /projects/RV32I_CPU
+permalink: /projects/RV32I_CPU/
 image: /img/RV32I_CPU/RISC-V.jpg
 tags : [Vivado, FPGA, VCS / Verdi ,SystemVerilog]
 ---

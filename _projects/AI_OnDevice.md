@@ -4,7 +4,7 @@ order : 7
 subtitle: Raspberry Pi 5 기반 AI 모델을 활용하여 차량 번호판 인식 및 주차 안내 / 관리 시스템
 description: ""
 layout: page
-permalink: /projects/AI_OnDevice
+permalink: /projects/AI_OnDevice/
 image: /img/AI_OnDevice/title.jpg
 tags : [Colab, Linux, Python]
 ---
