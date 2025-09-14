@@ -268,3 +268,9 @@ section.hero .subtitle {
     line-height: var(--hero-sub-line);
     margin: 0;
 }
+
+/* 원하는 너비로 조절 */
+.gh-btn {
+  width: 320px;              /* 180~320px 등으로 바꿔도 됨 */
+  justify-content: center;   /* 아이콘+텍스트 가운데 정렬 */
+}

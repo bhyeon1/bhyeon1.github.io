@@ -4,7 +4,7 @@ order : 6
 subtitle: FPGA 기반 모터 구동형 전자레인지 기능 구현
 description: ""
 layout: page
-permalink: /projects/Microwave
+permalink: /projects/Microwave/
 image: /img/Microwave/title.jpg
 tags : [Vivado, FPGA, Verilog]
 ---

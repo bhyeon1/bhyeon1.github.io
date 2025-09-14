@@ -47,3 +47,12 @@ show_sidebar: false
   <li>📧 Email : <strong>byung2587@naver.com</strong></li>
   <li>📱 H.P : <strong>010-2587-3967</strong></li>
 </ul>
+---
+<h1 style="font-size: 36px; font-weight: bold;">GitHub</h1> <br>
+<div class="buttons is-centered">
+  <a class="button is-dark is-rounded gh-btn"
+     href="https://github.com/bhyeon1" target="_blank" rel="noopener">
+    <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+    <span>GitHub</span>
+  </a>
+</div>

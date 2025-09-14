@@ -4,7 +4,7 @@ order : 4
 subtitle: STM32 기반 장애물 회피 2D 게임 프로젝트
 description: ""
 layout: page
-permalink: /projects/game_project
+permalink: /projects/game_project/
 image: /img/game_project/game_project_image.jpg
 tags : [STM32, C]
 ---

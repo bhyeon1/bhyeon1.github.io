@@ -4,7 +4,7 @@ order : 3
 subtitle: FPGA 기반 AMBA APB Bus/AXI4_Lite Protocol 및 peripheral 설계
 description: ""
 layout: page
-permalink: /projects/amba_bus
+permalink: /projects/amba_bus/
 image: /img/amba_bus/title.jpg
 tags : [Vivado, Vitis, FPGA, SystemVerilog]
 ---
