@@ -1,80 +1,19 @@
-# bulma-clean-theme
+# BHyeon — Portfolio
 
-[![Gem Version](https://badge.fury.io/rb/bulma-clean-theme.svg)](https://badge.fury.io/rb/bulma-clean-theme)
-![Gem](https://img.shields.io/gem/dt/bulma-clean-theme.svg)
+**SoC/FPGA/RTL 설계**와 **AI·임베디드 프로젝트**를 기록하는 포트폴리오입니다.  
+실제 하드웨어 구동과 검증 과정을 중심으로, 설계 의도–문제–해결–결과를 투명하게 정리합니다.
 
-This is a clean and simple Jekyll Theme built with the [Bulma](https://bulma.io/) framework, providing a modern-looking site to start with. 
+## What’s inside
+- **FFT Processor**: 512-point 고정소수점 FFT 프로세서(파이프라인, 스케일링, SQNR 분석, Vivado 합성)
+- **RISC-V CPU (RV32I)**: 멀티사이클 데이터패스 & 컨트롤 FSM, 메모리-맵드 I/O, APB 연동
+- **AMBA APB & AXI4**: 주변장치 설계/인터페이스, 마스터/슬레이브 동작 검증
+- **The Strange Adventure**: STM32 기반 2D 게임(60 FPS, 물리·렌더링 분리, 지터링 감소)
+- **Multi Sensing Watch**: 센서 통합(Stopwatch/온습도/초음파), FSM 기반 모드 제어
+- **Microwave System**: PWM을 통한 모터 제어, FSM 기반 모드 제어
+- **AI Parking Lot**: 번호판 인식·OCR + 주차 공간 상태 판정(라즈베리파이 연동)
 
-The theme uses [Alpine.js](https://github.com/alpinejs/alpine) for its interactive components, such as mobile navbar and notifications.
+## Pages
+https://bhyeon1.github.io/
 
-## Contents
-
-* [Installation](#installation)
-* [Documentation](#documentation)
-* [Upgrading to v1](#upgrading-to-v1)
-* [Contributing](#contributing)
-* [Development](#development)
-* [Licence](#licence)
-
-
-## Installation
-
-Add this line to your Jekyll site's `Gemfile`:
-
-```ruby
-gem "bulma-clean-theme"
-```
-
-And add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: bulma-clean-theme
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install bulma-clean-theme
-
-### GitHub pages
-
-### v1.0
-
-To deploy to GitHub pages using v1.x you will need to use GitHub Actions. Please see the [upgrade guide](https://www.csrhymes.com/bulma-clean-theme/docs/getting-started/upgrading-to-v1/) for more information.
-
-### v0.x
-
-If you are deploying to GitHub pages using their default build process, then you can install v0.x of the [GitHub Pages gem](https://github.com/github/pages-gem) and use `remote_theme` instead of `theme` in your `_config.yml`. 
-
-**Note that the GitHub Pages gem requires Jekyll version 3.9 and version 0.x of Bulma Clean Theme**
-
-```yaml
-# With GitHub Pages Gem
-remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
-```
-
-## Documentation
-
-Check out the demo site for the [Documentation](https://www.csrhymes.com/bulma-clean-theme/docs/)
-
-## Upgrading to v1
-
-There are several breaking changes for v1. Please read the [upgrade guide](https://www.csrhymes.com/bulma-clean-theme/docs/getting-started/upgrading-to-v1/) for more information.
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/chrisrhymes/bulma-clean-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is set up just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-# 테스트용 커밋
+---
+© BHyeon. 본 저장소는 개인 포트폴리오 사이트의 콘텐츠와 예제를 포함합니다.
