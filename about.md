@@ -12,7 +12,7 @@ show_sidebar: false
 <h1 style="font-size: 36px; font-weight: bold;">Profile</h1>
 <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
   <li><strong>이름</strong> : 김병현  </li>
-  <li><strong>최종 학력</strong> : 인천대학교 송도캠퍼스 학사 졸업</li>
+  <li><strong>최종 학력</strong> : 인천대학교 송도캠퍼스 학사 졸업 (2025.02)</li>
   <li><strong>학과</strong> : 전자공학과</li>
   <li><strong>총 이수 학점 / 전공 이수 학점</strong> : 140 / 74 </li>
   <li><strong>전체 학점 / 전공 학점(4.5 만점)</strong> : 4.0 / 4.27 </li>
@@ -44,7 +44,7 @@ show_sidebar: false
 ---
 <h1 style="font-size: 36px; font-weight: bold;">Contact</h1>
 <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
-  <li>📧 Email : <strong>byung2587@naver.com</strong></li>
+  <li>📧 Email : <strong>bhyeon2587@gmail.com</strong></li>
   <li>📱 H.P : <strong>010-2587-3967</strong></li>
 </ul>
 ---
