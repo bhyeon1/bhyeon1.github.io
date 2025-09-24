@@ -47,7 +47,7 @@ FPGA 기반 PWM 제어 및 사용자 인터페이스 설계를 통해 모터 구
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">1. FSM</h2>
 
-<img src="/img/microwave/fsm.jpg" width="80%">
+<img src="/img/microwave/fsm.jpg" width="90%">
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">2. 버튼 디바운싱</h2>
 
