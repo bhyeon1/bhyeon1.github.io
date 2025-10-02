@@ -57,10 +57,151 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">시연 영상</h2>
 
-<video controls width="100%" preload="metadata" playsinline>
-  <source src="{{ '/videos/The_Strange_Adventure_v2.mp4?v=2' | relative_url }}" type="video/mp4">
-  <p>동영상이 재생되지 않으면 <a href="{{ '/videos/The_Strange_Adventure_v2.mp4' | relative_url }}">여기</a>를 클릭하세요.</p>
-</video>
+<div id="demo-gifs" class="columns is-multiline is-mobile">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/stage1.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/stage1.gif' | relative_url }}" alt="Stage 1"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 1</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/stage2.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/stage2.gif' | relative_url }}" alt="Stage 2"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 2</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/stage3.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/stage3.gif' | relative_url }}" alt="Stage 3"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 3</div>
+    </a>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/stage4.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/stage4.gif' | relative_url }}" alt="Stage 4"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 4</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/stage5_6.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/stage5_6.gif' | relative_url }}" alt="stage 5, 6"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 5, 6</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/stage7.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/stage7.gif' | relative_url }}" alt="Stage 7"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 7</div>
+    </a>
+  </div>
+  
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/stage8.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/stage8.gif' | relative_url }}" alt="Stage 8"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 8</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/stage9.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/stage9.gif' | relative_url }}" alt="Stage 9"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 9</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/game_over.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/game_over.gif' | relative_url }}" alt="Game over"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Game over Screen</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/game_project/win.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/game_project/win.gif' | relative_url }}" alt="Win"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Win Screen</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/img/game_project/score.jpg' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/img/game_project/score.jpg' | relative_url }}" alt="Death Count & Clear Time"
+            loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:14px;margin-top:.4em;text-align:center;">Death Count 및 Clear time</div>
+    </a>
+  </div>
+</div>
+
+<div id="lb" style="display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.82);backdrop-filter:saturate(120%) blur(2px);
+  align-items:center;justify-content:center;padding:8px;
+  overflow:auto;"> 
+  <img id="lb-img" alt="preview"
+       style="max-width:98vw;max-height:96vh;  
+              width:auto;height:auto;display:block;
+              border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.4)">
+  <button id="lb-x" aria-label="닫기" title="닫기"
+          style="position:absolute;top:10px;right:14px;border:0;background:transparent;
+                 color:#fff;font-size:34px;cursor:pointer;line-height:1;">×</button>
+</div>
+
+<script>
+(function(){
+  const grid = document.getElementById('demo-gifs');
+  const lb   = document.getElementById('lb');
+  const img  = document.getElementById('lb-img');
+  const xBtn = document.getElementById('lb-x');
+
+  grid.addEventListener('click', function (e) {
+    const a = e.target.closest('a');
+    if (!a) return;
+    e.preventDefault();
+    img.src = a.getAttribute('href'); // 클릭한 카드의 href = 원본 GIF
+    lb.style.display = 'flex';
+  });
+
+  function closeLB(){ lb.style.display='none'; img.src=''; }
+  lb.addEventListener('click', (e)=> { if (e.target === lb) closeLB(); });
+  xBtn.addEventListener('click', closeLB);
+  document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') closeLB(); });
+})();
+</script>
 
 ---
 
@@ -236,3 +377,15 @@ typedef struct {
   <li>이동 플랫폼 상호작용 고도화: 플랫폼 속도/가속도 상대좌표 적용, 머리·벽 충돌에 대한 연속 충돌 처리(continuous) 및 위치 보정 로직 보강.</li>
   <li>비주얼 업그레이드: 레이어드 배경(패럴랙스), 스프라이트 시트/프레임 애니메이션, 파티클/피드백 이펙트 추가. </li>
 </ul>
+
+---
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
+<div class="has-text-centered">
+  <a class="button is-dark is-rounded gh-btn"
+     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/game_project"
+     target="_blank" rel="noopener"
+     style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
+    <span>GitHub</span>
+  </a>
+</div>
