@@ -204,3 +204,15 @@ tags : [ASIC, FPGA, VCS/Verdi, SystemVerilog, MATLAB]
     <li>Verilog/SystemVerilog 문법 이해가 한층 깊어졌고, 테스트벤치 기반의 검증 프로세스를 설계하면서 HDL·검증 역량이 향상됨을 느낌.</li>
     <li>실무 규모에 근접한 프로젝트에서 팀장을 맡아 일정에 따른 목표의 관리, 팀원의 역량에 따른 역할 분배에 대한 중요성을 경험했고, 효율적인 분업·협업 체계가 성과에 직결됨을 확인함.</li>
   </ul>
+
+  ---
+
+  <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
+<div class="has-text-centered">
+  <a class="button is-dark is-rounded gh-btn"
+     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/fft_processor"
+     target="_blank" rel="noopener"
+     style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
+    <span>GitHub</span>
+  </a>
+</div>
