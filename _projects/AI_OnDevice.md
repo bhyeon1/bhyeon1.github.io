@@ -281,3 +281,27 @@ tags : [Colab, Linux, Python]
   });
 })();
 </script>
+
+---
+
+<h1 style="font-size: 36px; font-weight: bold;">트러블 슈팅</h1>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">1. YOLO 모델 학습 실패</h2>
+<ul style="font-size:18px; line-height:1.6; margin-left:30px;">
+  <li><strong>원인 분석</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>YOLO는 객체의 시각적 특징을 기반으로 bounding box.</li>
+      <li>학습 데이터 셋에서 번호판 전체가 모자이크 되어 있음.</li>
+      <li>YOLO가 객체의 특징을 찾지 못함.</li>
+    </ul>
+  </li>
+  <li><strong>해결 과정</strong> : 온전한 번호판이 나와있는 데이터 셋 사용. (해외)
+  </li>
+</ul>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">2. YOLO 모델 버전 호환성 문제</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li><strong>원인 분석</strong> : 라이브러리 상호 호환성 충돌.</li>
+  <li><strong>해결 방법</strong> : 팀원들과의 소통 후  사용 모델 및 라이브러리 호환성 체크.</li>
+</ul>
+<img src="/img/AI_OnDevice/troubleshooting1.png" width="60%">
