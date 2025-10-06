@@ -345,3 +345,100 @@ tags : [Colab, Linux, Python]
     </a>
   </div>
 </div>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">4. OCR</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li><strong>문제 상황</strong> : OCR 동작의 신뢰성 문제.</li>
+  <li><strong>원인 분석</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>Raspberrypi5 내에서 OCR동작 느리고 부정확.</li>
+      <li>한번의 OCR 동작으로 정확히 인식할 확률 매우 낮음.</li>
+      <li>여러 번의 동작 결과 중 어떤 문자열이 정확한지 판별 X.</li>
+    </ul>
+  </li>
+  <li><strong>해결 과정</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>번호판 detect시 1초 간격으로 10번의 OCR동작.</li>
+      <li>동작 중 가장 많이 인식된 문자열을 최종 선택.</li>
+      <li>일정 길이 이하의 문자열은 제외.</li>
+    </ul>
+  </li>
+</ul>
+
+<div id="demo-gifs" class="columns is-multiline is-mobile">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/img/AI_OnDevice/troubleshooting3_1.png' | relative_url }}" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/img/AI_OnDevice/troubleshooting3_1.png' | relative_url }}" alt="troubleshooting3_1"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+    </a>
+  </div>
+
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/img/AI_OnDevice/troubleshooting3_2.png' | relative_url }}" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/img/AI_OnDevice/troubleshooting3_2.png' | relative_url }}" alt="troubleshooting3_2"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+    </a>
+  </div>
+</div>
+
+---
+
+<h1 style="font-size: 36px; font-weight: bold;">고찰</h1>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">1. 온디바이스 실행 성능 한계</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li><strong>딥러닝 연산의 높은 연산 부하</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>OCR/YOLOv8 연산은 CPU 사용이 높아 동작 속도 느림.</li>
+      <li>Raspberry Pi 5에서도 실시간 프레임 처리에 한계.</li>
+    </ul>
+  </li>
+  <li><strong>PyTorch 기반 YOLOv8</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>Ultralytics 라이브러리 기반 → GPU 가속 필요.</li>
+      <li>Pi 환경에선 CPU-only 추론 → FPS 저하 불가피.</li>
+    </ul>
+  </li>
+  <li><strong>차량 입차 탐지 모델 (YOLOv8)</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>YOLO 기반 차량 탐지 / 입차 여부 판단은 실시간 수준은 0.3초 정도로 충분.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<img src="/img/AI_OnDevice/cpu_use.png" width="50%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">2. CRNN vs EasyOCR 모델 학습 과정에서 느낀 점</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li><strong>프로젝트 목적</strong> : 대한민국 차량 번호판 문자 (한글 포함)를 정확히 인식하는 OCR 모델 개발.
+  </li>
+  <li><strong>CRNN 학습 성능과 한계</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>학습 데이터 : 5000장 이상 실제 번호판 이미지.</li>
+      <li>문제점 : 웹캠 인식 이미지 문자열 정확도 낮음.</li>
+    </ul>
+  </li>
+  <li><strong>EasyOCR 전환 및 비교 분석</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>학습 데이터 : 100만장 이상의 대규모 학습 모델.</li>
+      <li>성능 : 웹캠 인식 이미지 문자열 정확도 높음.</li>
+    </ul>
+  </li>
+</ul>
+
+---
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
+<div class="has-text-centered">
+  <a class="button is-dark is-rounded gh-btn"
+     href="https://github.com/bhyeon1/Project_AI_Parking_Lot"
+     target="_blank" rel="noopener"
+     style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
+    <span>GitHub</span>
+  </a>
+</div>
