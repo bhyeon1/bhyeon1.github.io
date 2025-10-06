@@ -168,3 +168,5 @@ end
   <li>모드 분리를 통한 FSM 역량 강화</li>
   <li>버튼 디바운싱 및 edge detector 회로 원리 학습</li>
 </ul>
+
+---
