@@ -305,3 +305,43 @@ tags : [Colab, Linux, Python]
   <li><strong>해결 방법</strong> : 팀원들과의 소통 후  사용 모델 및 라이브러리 호환성 체크.</li>
 </ul>
 <img src="/img/AI_OnDevice/troubleshooting1.png" width="60%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">3. CRNN</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li><strong>문제 상황</strong> : YOLOv5는 번호판 영역을 정확하게 탐지했지만, 우분투 환경 내 CRNN 한글 폰트 깨짐 현상 발견.</li>
+  <li><strong>원인 분석</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>charset.json에 한글 미포함 → CRNN이 index 탐색 불가.</li>
+      <li>디코딩 과정에서 해당 문자 자리에 □ 출력.</li>
+    </ul>
+  </li>
+  <li><strong>해결 과정</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>charset.json에 한글이 있는지 확인.</li>
+      <li>ImageFont에 한글 폰트 경로 지정.</li>
+      <li>CRNN 모델이 한글을 인식할 수 있는지 테스트.</li>
+    </ul>
+  </li>
+</ul>
+
+<div id="demo-gifs" class="columns is-multiline is-mobile">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/img/AI_OnDevice/troubleshooting2_1.png' | relative_url }}" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/img/AI_OnDevice/troubleshooting2_1.png' | relative_url }}" alt="troubleshooting2_1"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Before </div>
+    </a>
+  </div>
+
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/img/AI_OnDevice/troubleshooting2_2.png' | relative_url }}" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/img/AI_OnDevice/troubleshooting2_2.png' | relative_url }}" alt="troubleshooting2_2"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">After </div>
+    </a>
+  </div>
+</div>
