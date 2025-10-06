@@ -1,0 +1,2 @@
+vcs -full64 -kdb -debug_access+all +lint=TFIPC-L -sverilog -f top_fft_filelist
+./simv -verdi &

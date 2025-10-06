@@ -1,0 +1,4 @@
+lappend search_path  ../sverilog
+set net_list [glob ../FFT/final/*.sv]
+analyze -format sverilog -library WORK $net_list
+

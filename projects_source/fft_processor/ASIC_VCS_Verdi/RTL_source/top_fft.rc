@@ -1,0 +1,214 @@
+Magic 271485
+Revision Verdi_W-2024.09-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1701 569 232 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/aedu24/asic_edu/FFT/final/inter.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 1509950.000000
+cursor 1495000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 7
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "dut"
+activeDirFile "" "/home/aedu24/asic_edu/FFT/final/inter.fsdb"
+addSignal -h 15 /tb_top_fft_module/dut/clk
+addSignal -h 15 /tb_top_fft_module/dut/rstn
+addSignal -h 15 /tb_top_fft_module/dut/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/din_re_t[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/din_im_t[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/valid_out
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/dout_re_t[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/dout_im_t[15:0]
+addSubGroup "u_fft_module_0" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/valid_out
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_0/min_out[4:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/dout_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/dout_im[15:0]
+addSubGroup "u_cbfp_0" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_cbfp_0/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_cbfp_0/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_cbfp_0/val_in
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_cbfp_0/re_in[0:15]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_cbfp_0/im_in[0:15]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_cbfp_0/re_out[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_cbfp_0/im_out[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_cbfp_0/val_out
+addSignal -h 15 -UNSIGNED -HEX /tb_top_fft_module/dut/u_fft_module_0/u_cbfp_0/min_out[4:0]
+endSubGroup "u_cbfp_0"
+addSubGroup "u_fft_stage_0" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_0/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_0/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_0/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_0/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_0/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_0/valid_out_0_2d
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_0/re_m_0[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_0/im_m_0[15:0]
+endSubGroup "u_fft_stage_0"
+addSubGroup "u_fft_stage_1" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_1/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_1/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_1/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_1/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_1/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_1/valid_out_1_3d
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_1/re_m_1[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_1/im_m_1[15:0]
+endSubGroup "u_fft_stage_1"
+addSubGroup "u_fft_stage_2" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_2/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_2/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_2/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_2/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_2/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_2/valid_out_2_3d
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_2/re_m_2[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_0/u_fft_stage_2/im_m_2[15:0]
+endSubGroup "u_fft_stage_2"
+endSubGroup "u_fft_module_0"
+addSubGroup "u_fft_module_1" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/valid_out
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/dout_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/dout_im[15:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_1/index_h[4:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_1/index_l[4:0]
+addSubGroup "u_cbfp_1" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/val_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/re_in[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/im_in[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/re_out[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/im_out[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/val_out
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/index_h[4:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_cbfp_1/index_l[4:0]
+endSubGroup "u_cbfp_1"
+addSubGroup "u_fft_stage_3" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_3/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_3/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_3/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_3/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_3/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_3/valid_out_3_2d
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_3/re_m_3[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_3/im_m_3[15:0]
+endSubGroup "u_fft_stage_3"
+addSubGroup "u_fft_stage_4" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_4/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_4/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_4/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_4/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_4/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_4/valid_out_4_3d
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_4/re_m_4[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_4/im_m_4[15:0]
+endSubGroup "u_fft_stage_4"
+addSubGroup "u_fft_stage_5" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_5/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_5/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_5/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_5/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_5/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_5/valid_out_5_3d
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_5/re_m_5[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_1/u_fft_stage_5/im_m_5[15:0]
+endSubGroup "u_fft_stage_5"
+endSubGroup "u_fft_module_1"
+addSubGroup "u_fft_module_2" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/din_im[15:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_2/index0[4:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_2/index1_0_7[4:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_2/index1_8_15[4:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/valid_out
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/dout_re[0:511]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/dout_im[0:511]
+addSubGroup "u_fft_stage_6" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_6/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_6/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_6/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_6/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_6/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_6/valid_out_6_2d
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_6/re_m_6[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_6/im_m_6[15:0]
+endSubGroup "u_fft_stage_6"
+addSubGroup "u_fft_stage_7" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_7/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_7/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_7/valid_in
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_7/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_7/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_7/valid_out_7_3d
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_7/re_m_7[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_7/im_m_7[15:0]
+endSubGroup "u_fft_stage_7"
+addSubGroup "u_fft_stage_8" -e FALSE
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/clk
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/rstn
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/valid_in
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/index0[4:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/index1_0_7[4:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/index1_8_15[4:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/din_re[15:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/din_im[15:0]
+addSignal -h 15 /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/valid_out_8_2d
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/dout_re_shift[511:0]
+addSignal -h 15 -2COMP -UDEC /tb_top_fft_module/dut/u_fft_module_2/u_fft_stage_8/dout_im_shift[511:0]
+endSubGroup "u_fft_stage_8"
+endSubGroup "u_fft_module_2"
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

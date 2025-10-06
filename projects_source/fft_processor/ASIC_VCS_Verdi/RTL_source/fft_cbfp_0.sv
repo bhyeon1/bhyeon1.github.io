@@ -1,0 +1,233 @@
+`timescale 1ns / 1ps
+
+module fft_cbfp_0 #(
+    parameter DATA  = 23,
+    parameter ARRAY = 16,
+    parameter INDEX = 5
+) (
+    input logic               clk,
+    input logic               rstn,
+    input logic               val_in,
+    input logic signed [22:0] re_in [0:ARRAY-1],
+    input logic signed [22:0] im_in [0:ARRAY-1],
+
+    output logic signed [10:0] re_out [ARRAY-1:0],
+    output logic signed [10:0] im_out [ARRAY-1:0],
+    output logic               val_out,
+    output logic        [ 4:0] min_out
+);
+    logic val_in_1d, val_in_2d, val_in_3d, val_in_4d;
+    logic [4:0] re_mag[0:ARRAY-1];
+    logic [4:0] im_mag[0:ARRAY-1];
+    logic [4:0] re_min_16, im_min_16;
+    logic [4:0] re_min_4, im_min_4;
+    logic        [     4:0] re_min_buf[      0:3];
+    logic        [     4:0] im_min_buf[      0:3];
+    logic signed [DATA-1:0] re_6d     [ARRAY-1:0];
+    logic signed [DATA-1:0] im_6d     [ARRAY-1:0];
+    logic [1:0] cnt_buf, val_cnt;
+    logic val_buf, val_buf_d;
+    logic signed [DATA-1:0] re_shift[ARRAY-1:0];
+    logic signed [DATA-1:0] im_shift[ARRAY-1:0];
+    logic        [     2:0] cnt_min;
+
+    //logic        [4:0]      re_index_reg [0:7],
+    //logic        [4:0]      im_index_reg [0:7],
+    //==========val============================================================//
+    always_ff @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            val_in_1d <= '0;
+            val_in_2d <= '0;
+            val_in_3d <= '0;
+            val_in_4d <= '0;
+            val_out   <= '0;
+        end else begin
+            val_in_1d <= val_in;
+            val_in_2d <= val_in_1d;
+            val_in_3d <= val_in_2d;
+            val_in_4d <= val_in_3d;
+            val_out   <= val_in_4d;
+        end
+    end
+
+    logic val_cbfp;
+    assign val_cbfp = val_in | val_in_3d;
+    //==========val============================================================//
+    //==========mag============================================================//
+    // mag 저장 //
+    always_comb begin
+        if (val_cbfp) begin
+            for (int i = 0; i < ARRAY; i++) begin
+                re_mag[i] = mag(re_in[i]);
+                im_mag[i] = mag(im_in[i]);
+            end
+        end else begin
+            for (int i = 0; i < ARRAY; i++) begin
+                re_mag[i] = 0;
+                im_mag[i] = 0;
+            end
+        end
+    end
+    // mag 저장 //
+
+    // mag 계산 //
+    function automatic [4:0] mag(input logic [24:0] data);
+        logic msb;
+        begin
+            msb = data[24];
+            case (1'b1)
+                (data[21] != msb): mag = 0;
+                (data[20] != msb): mag = 1;
+                (data[19] != msb): mag = 2;
+                (data[18] != msb): mag = 3;
+                (data[17] != msb): mag = 4;
+                (data[16] != msb): mag = 5;
+                (data[15] != msb): mag = 6;
+                (data[14] != msb): mag = 7;
+                (data[13] != msb): mag = 8;
+                (data[12] != msb): mag = 9;
+                (data[11] != msb): mag = 10;
+                (data[10] != msb): mag = 11;
+                (data[9] != msb):  mag = 12;
+                (data[8] != msb):  mag = 13;
+                (data[7] != msb):  mag = 14;
+                (data[6] != msb):  mag = 15;
+                (data[5] != msb):  mag = 16;
+                (data[4] != msb):  mag = 17;
+                (data[5] != msb):  mag = 18;
+                (data[4] != msb):  mag = 19;
+                (data[3] != msb):  mag = 20;
+                (data[2] != msb):  mag = 21;
+                (data[1] != msb):  mag = 22;
+                (data[0] != msb):  mag = 23;
+                default:           mag = 24;
+            endcase
+        end
+    endfunction
+    // mag 계산 //
+    //==========mag============================================================//
+    //==========min============================================================//
+    // min 16 계산//
+    always_comb begin
+        re_min_16 = re_mag[0];
+        im_min_16 = im_mag[0];
+        for (int j = 1; j < ARRAY; j++) begin
+            if (re_mag[j] < re_min_16) re_min_16 = re_mag[j];
+            if (im_mag[j] < im_min_16) im_min_16 = im_mag[j];
+        end
+    end
+    // min 16 계산//
+
+    // min 16 저장 //
+    always_ff @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            cnt_buf <= 2'd0;
+            val_buf <= '0;
+        end else if (val_in) begin
+            cnt_buf <= cnt_buf + 1;
+            if (cnt_buf == 2'd3) val_buf <= 1'b1;
+            else val_buf <= 1'b0;
+        end else begin
+            cnt_buf <= '0;
+            val_buf <= '0;
+        end
+    end
+
+    always_ff @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            for (int i = 0; i < 4; i++) begin
+                re_min_buf[i] <= 0;
+                im_min_buf[i] <= 0;
+            end
+        end else if (val_in) begin
+            for (int i = 0; i < 4; i++) begin
+                re_min_buf[i] <= re_min_buf[i];
+                im_min_buf[i] <= im_min_buf[i];
+            end
+            re_min_buf[cnt_buf] <= re_min_16;
+            im_min_buf[cnt_buf] <= im_min_16;
+        end else begin
+            for (int i = 0; i < 4; i++) begin
+                re_min_buf[i] <= 0;
+                im_min_buf[i] <= 0;
+            end
+        end
+    end
+
+    // min 16 저장 //
+
+    // min 4 계산 //
+    always_ff @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            re_min_4 <= 0;
+            im_min_4 <= 0;
+        end else if (val_in_4d) begin
+            if (val_buf) begin
+                if (re_min_buf[1] <= re_min_buf[0]) begin
+                    if (re_min_buf[2] <= re_min_buf[1]) begin
+                        if (re_min_buf[3] <= re_min_buf[2])
+                            re_min_4 <= re_min_buf[3];
+                        else re_min_4 <= re_min_buf[2];
+                    end else re_min_4 <= re_min_buf[1];
+                end else re_min_4 <= re_min_buf[0];
+
+                if (im_min_buf[1] <= im_min_buf[0]) begin
+                    if (im_min_buf[2] <= im_min_buf[1]) begin
+                        if (im_min_buf[3] <= im_min_buf[2])
+                            im_min_4 <= im_min_buf[3];
+                        else im_min_4 <= im_min_buf[2];
+                    end else im_min_4 <= im_min_buf[1];
+                end else im_min_4 <= im_min_buf[0];
+            end else begin
+                re_min_4 <= re_min_4;
+                im_min_4 <= im_min_4;
+            end
+        end else begin
+            re_min_4 <= '0;
+            im_min_4 <= '0;
+        end
+    end
+
+    assign min_out = (re_min_4 <= im_min_4) ? re_min_4 : im_min_4;
+
+    // min 4 계산 //
+    //==========min============================================================//
+    //==========cut============================================================//
+    // 레지스터 모듈 //
+    shift_register #(
+        .DATA (DATA),
+        .ARRAY(ARRAY),
+        .INDEX(INDEX)
+    ) cbfp_sr (
+        .clk        (clk),
+        .rstn       (rstn),
+        .data_in_re (re_in),
+        .data_in_im (im_in),
+        .data_out_re(re_6d),
+        .data_out_im(im_6d)
+    );
+    // 레지스터 모듈 //
+
+
+    // 시프트 //
+
+    always_comb begin
+        if (val_out) begin
+            for (int n = 0; n < ARRAY; n++) begin
+                re_shift[n] = re_6d[n] <<< min_out;
+                im_shift[n] = im_6d[n] <<< min_out;
+                re_out[n]   = re_shift[n][DATA-1-:11];
+                im_out[n]   = im_shift[n][DATA-1-:11];
+            end
+        end else begin
+            for (int n = 0; n < ARRAY; n++) begin
+                re_shift[n] = '0;
+                im_shift[n] = '0;
+                re_out[n]   = '0;
+                im_out[n]   = '0;
+            end
+        end
+    end
+    // 시프트 ///
+    //==========cut============================================================//
+endmodule
