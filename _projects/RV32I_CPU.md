@@ -107,3 +107,15 @@ tags : [Vivado, FPGA, VCS / Verdi ,SystemVerilog]
   <li>Block diagram의 중요성 : 그림이 코드의 길을 안내함. (모듈 경계 / Path / 레지스터 위치 명확화)</li>
   <li>디버깅 방식 : 문제가 된 State를 찍고, 그 안에서 제어 신호, 데이터의 흐름을 확인.</li>
 </ul>
+
+---
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
+<div class="has-text-centered">
+  <a class="button is-dark is-rounded gh-btn"
+     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/RV32I_CPU"
+     target="_blank" rel="noopener"
+     style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
+    <span>GitHub</span>
+  </a>
+</div>
