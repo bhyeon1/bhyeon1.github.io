@@ -20,7 +20,7 @@ tags : [ASIC, FPGA, VCS/Verdi, SystemVerilog, MATLAB]
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">목적</h2>
 
 <p style="font-size: 18px; line-height: 1.4; margin-left: 10px;">
-  파이프라인 구조의 FFT Processor를 RTL design부터 FPGA 검증까지 수행하여 실무에 적용되는 ASIC 설계 과정을 경험.
+  <strong>파이프라인 구조의 FFT Processor를 RTL design부터 FPGA 검증까지 수행하여 실무에 적용되는 ASIC 설계 과정을 경험.</strong>
 </p>
 
 <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
@@ -35,6 +35,12 @@ tags : [ASIC, FPGA, VCS/Verdi, SystemVerilog, MATLAB]
   <li>사용 언어 : SystemVerilog, MATLAB</li>
   <li>Tool : VCS, Verdi, Vivado, draw.io </li>
   <li>editor : vi editor </li>
+</ul>
+
+<h2 style="font-size:22px;font-weight:bold;margin-top:1.6em;">참고 문헌</h2>
+<ul style="font-size:18px;line-height:1.6;margin-left:30px;">
+  <li><strong>Shousheng He, Mats Torkelson, “A New Approach to Pipeline FFT Processor.”</strong></li>
+  <li><strong>E. Bidet, D. Castelain, C. Joanblanq, P. Senn, “A Fast Single-Chip Implementation of 8192-Point Complex FFT.”</strong></li>
 </ul>
 
 ---
