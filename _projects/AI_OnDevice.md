@@ -94,6 +94,26 @@ tags : [Colab, Linux, Python]
   </li>
 </ul>
 
+<p style="font-size: 18px; line-height: 1.4; margin-left: 10px;">
+<br>
+<strong>3. GPIO 핀을 통한 라즈베리파이 통신</strong>
+</p>
+<ul style="font-size:18px; line-height:1.6; margin-left:30px;">
+  <li><strong>RPI A</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>GPIO 0 (입력): 2초 동안 HIGH 검출 시 등록된 차량 진입으로 인식</li>
+      <li>GPIO 1 (출력): 빈 자리가 없을 시 HIGH</li>
+    </ul>
+  </li>
+
+  <li style="margin-top:8px;"><strong>RPI B</strong>
+    <ul style="margin-top:6px; margin-left:18px;">
+      <li>GPIO 0 (출력): 등록된 차량 진입 시 3초 동안 HIGH</li>
+      <li>GPIO 1 (입력): HIGH → 빈 자리가 없다고 판단</li>
+    </ul>
+  </li>
+</ul>
+
 <img src="/img/AI_OnDevice/RPI.jpg" width="40%">
 
 ---
