@@ -149,6 +149,96 @@ end
 ---
 <h1 style="font-size: 36px; font-weight: bold;">동작 영상</h1>
 
+<div id="demo-gifs" class="columns is-multiline is-mobile">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/Microwave/count_up_10.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/Microwave/count_up_10.gif' | relative_url }}" alt="10 Up"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/Microwave/count_up_30.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/Microwave/count_up_30.gif' | relative_url }}" alt="30 Up"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/Microwave/time_reset.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/Microwave/time_reset.gif' | relative_url }}" alt="Time Reset"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+    </a>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/Microwave/general_start.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/Microwave/general_start.gif' | relative_url }}" alt="General Start"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/Microwave/defrozen_start.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/Microwave/defrozen_start.gif' | relative_url }}" alt="Defrozen Start"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/Microwave/forced_stop.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/Microwave/forced_stop.gif' | relative_url }}" alt="Forced Stop"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+    </a>
+  </div>
+</div>
+
+
+<div id="lb" style="display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.82);backdrop-filter:saturate(120%) blur(2px);
+  align-items:center;justify-content:center;padding:8px;
+  overflow:auto;"> 
+  <img id="lb-img" alt="preview"
+       style="max-width:98vw;max-height:96vh;  
+              width:auto;height:auto;display:block;
+              border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.4)">
+  <button id="lb-x" aria-label="닫기" title="닫기"
+          style="position:absolute;top:10px;right:14px;border:0;background:transparent;
+                 color:#fff;font-size:34px;cursor:pointer;line-height:1;">×</button>
+</div>
+
+<script>
+(function(){
+  const grid = document.getElementById('demo-gifs');
+  const lb   = document.getElementById('lb');
+  const img  = document.getElementById('lb-img');
+  const xBtn = document.getElementById('lb-x');
+
+  grid.addEventListener('click', function (e) {
+    const a = e.target.closest('a');
+    if (!a) return;
+    e.preventDefault();
+    img.src = a.getAttribute('href'); // 클릭한 카드의 href = 원본 GIF
+    lb.style.display = 'flex';
+  });
+
+  function closeLB(){ lb.style.display='none'; img.src=''; }
+  lb.addEventListener('click', (e)=> { if (e.target === lb) closeLB(); });
+  xBtn.addEventListener('click', closeLB);
+  document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') closeLB(); });
+})();
+</script>
 
 ---
 

@@ -64,7 +64,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/stage1.gif' | relative_url }}" alt="Stage 1"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 1</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stage 1</div>
     </a>
   </div>
 
@@ -74,7 +74,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/stage2.gif' | relative_url }}" alt="Stage 2"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 2</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stage 2</div>
     </a>
   </div>
 
@@ -84,7 +84,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/stage3.gif' | relative_url }}" alt="Stage 3"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 3</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stage 3</div>
     </a>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -93,7 +93,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/stage4.gif' | relative_url }}" alt="Stage 4"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 4</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stage 4</div>
     </a>
   </div>
 
@@ -103,7 +103,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/stage5_6.gif' | relative_url }}" alt="stage 5, 6"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 5, 6</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stage 5, 6</div>
     </a>
   </div>
 
@@ -113,7 +113,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/stage7.gif' | relative_url }}" alt="Stage 7"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 7</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stage 7</div>
     </a>
   </div>
   
@@ -123,7 +123,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/stage8.gif' | relative_url }}" alt="Stage 8"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 8</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stage 8</div>
     </a>
   </div>
 
@@ -133,7 +133,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/stage9.gif' | relative_url }}" alt="Stage 9"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Stage 9</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stage 9</div>
     </a>
   </div>
 
@@ -143,7 +143,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/game_over.gif' | relative_url }}" alt="Game over"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Game over Screen</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Game over Screen</div>
     </a>
   </div>
 
@@ -153,7 +153,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/gif/game_project/win.gif' | relative_url }}" alt="Win"
              loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Win Screen</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Win Screen</div>
     </a>
   </div>
 
@@ -163,7 +163,7 @@ STM32 M3 코어 기반 2D 플랫폼 게임을 설계·구현하여 UART 통신 �
         <img src="{{ '/img/game_project/score.jpg' | relative_url }}" alt="Death Count & Clear Time"
             loading="lazy" decoding="async" style="width:100%;height:auto;">
       </figure>
-      <div style="font-size:14px;margin-top:.4em;text-align:center;">Death Count 및 Clear time</div>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Death Count 및 Clear time</div>
     </a>
   </div>
 </div>
