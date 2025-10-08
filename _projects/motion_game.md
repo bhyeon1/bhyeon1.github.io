@@ -180,3 +180,18 @@ tags : [Vivado, Vitis, FPGA, SystemVerilog, Python]
 </script>
 
 ---
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
+
+<p style="font-size: 18px; line-height: 1.4; margin-left: 10px;">
+<strong>자세한 설계 및 구현, 트러블슈팅 등은 GitHub에서 확인할 수 있습니다.</strong> 🔗📘
+</p>
+
+<div class="has-text-centered">
+  <a class="button is-dark is-rounded gh-btn"
+     href="https://github.com/2735C/VGA_Motion_Recognition_Game?tab=readme-ov-file"
+     target="_blank" rel="noopener"
+     style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
+    <span>GitHub</span>
+  </a>
+</div>
