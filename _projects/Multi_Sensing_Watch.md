@@ -115,6 +115,150 @@ tags : [Vivado, FPGA, Verilog]
 
 ---
 
+<h1 style="font-size: 36px; font-weight: bold;">동작 영상</h1>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">버튼 및 스위치 제어</h2>
+<div id="demo-gifs" class="columns is-multiline is-mobile">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/watch/watch_1.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/watch_1.gif' | relative_url }}" alt="Watch 1"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">초기 시작 (모든 sw off) : Watch mode</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/watch/watch_2.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/watch_2.gif' | relative_url }}" alt="Watch 2"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">sw0를 통해 어떤 시간을 표시할지 도메인 선택</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/watch/watch_setting_btn.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/watch_setting_btn.gif' | relative_url }}" alt="Watch_Setting_Btn"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">좌우 버튼 : 시간 도메인 이동 / 상하 버튼 : 시간 설정</div>
+    </a>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/watch/stopwatch_btn.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/stopwatch_btn.gif' | relative_url }}" alt="Stopwatch_Btn"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stopwatch mode</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/watch/sr04_btn.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/sr04_btn.gif' | relative_url }}" alt="SR04_Btn"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">SR04 sensor mode</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/watch/dht11_btn.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/dht11_btn.gif' | relative_url }}" alt="DHT11_Btn"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">dht11 sensor mode</div>
+    </a>
+  </div>
+</div>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">Uart 제어</h2>
+
+<div id="demo-gifs" class="columns is-multiline is-mobile">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/watch/watch_setting_uart.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/watch_setting_uart.gif' | relative_url }}" alt="Watch_Setting_UART"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Watch setting mode</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/watch/stopwatch_uart.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/stopwatch_uart.gif' | relative_url }}" alt="Stopwatch_UART"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Stopwatch mode</div>
+    </a>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    dht11_uart<a href="{{ '/gif/watch/sr04_uart.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/sr04_uart.gif' | relative_url }}" alt="SR04_UART"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">SR04 sensor mode</div>
+    </a>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/gif/watch/dht11_uart.gif' | relative_url }}" target="_blank" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/gif/watch/dht11_uart.gif' | relative_url }}" alt="dht11 sensor mode"
+             loading="lazy" decoding="async" style="width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">dht11 sensor mode</div>
+    </a>
+  </div>
+</div>
+
+<div id="lb" style="display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.82);backdrop-filter:saturate(120%) blur(2px);
+  align-items:center;justify-content:center;padding:8px;
+  overflow:auto;"> 
+  <img id="lb-img" alt="preview"
+       style="max-width:98vw;max-height:96vh;  
+              width:auto;height:auto;display:block;
+              border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.4)">
+  <button id="lb-x" aria-label="닫기" title="닫기"
+          style="position:absolute;top:10px;right:14px;border:0;background:transparent;
+                 color:#fff;font-size:34px;cursor:pointer;line-height:1;">×</button>
+</div>
+
+<script>
+(function(){
+  const grid = document.getElementById('demo-gifs');
+  const lb   = document.getElementById('lb');
+  const img  = document.getElementById('lb-img');
+  const xBtn = document.getElementById('lb-x');
+
+  grid.addEventListener('click', function (e) {
+    const a = e.target.closest('a');
+    if (!a) return;
+    e.preventDefault();
+    img.src = a.getAttribute('href'); // 클릭한 카드의 href = 원본 GIF
+    lb.style.display = 'flex';
+  });
+
+  function closeLB(){ lb.style.display='none'; img.src=''; }
+  lb.addEventListener('click', (e)=> { if (e.target === lb) closeLB(); });
+  xBtn.addEventListener('click', closeLB);
+  document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') closeLB(); });
+})();
+</script>
+
+---
+
 <h1 style="font-size: 36px; font-weight: bold;">트러블 슈팅</h1>
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">1. 최종 merge 후 setup timing violation</h2>
 <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">

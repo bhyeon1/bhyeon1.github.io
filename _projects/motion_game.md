@@ -38,7 +38,7 @@ tags : [Vivado, Vitis, FPGA, SystemVerilog, Python]
 
 ---
 
-<h1 style="font-size: 36px; font-weight: bold;">시연 영상</h1>
+<h1 style="font-size: 36px; font-weight: bold;">동작 영상</h1>
 
 <div id="demo-gifs" class="columns is-multiline is-mobile">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
