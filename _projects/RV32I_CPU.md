@@ -1,6 +1,6 @@
 ---
 title: RV32I CPU Architecture
-order : 2
+order : 4
 subtitle: FPGA 기반 RISC-V 32bit multi cycle CPU 설계
 description: ""
 layout: page

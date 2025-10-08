@@ -1,6 +1,6 @@
 ---
 title: The Strange Adventure
-order : 4
+order : 5
 subtitle: STM32 기반 장애물 회피 2D 게임 프로젝트
 description: ""
 layout: page

@@ -1,6 +1,6 @@
 ---
 title: Multi Sensing Watch project
-order : 5
+order : 6
 subtitle: FPGA 기반 실시간 센서 통합 감지 시스템
 description: ""
 layout: page
