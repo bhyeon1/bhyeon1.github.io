@@ -28,7 +28,7 @@ FPGA 기반 PWM 제어 및 사용자 인터페이스 설계를 통해 모터 구
     </ul>
   <li>사용자 입력 인터페이스 구성</li>
     <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
-      <li>sw0 off : 10초 설정 모드, sw1 on : 30초 설정 모드</li>
+      <li>sw0 off : 10초 설정 모드, sw0 on : 30초 설정 모드</li>
       <li>btnU : 시간 증가, btnD : 시간 초기화.</li>
       <li>btnL : 일반 조리 모드 시작, btnR : 해동 모드 시작.</li>
     </ul>
