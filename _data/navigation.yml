@@ -3,10 +3,10 @@
 - name: Projects
   link: /#
   dropdown:
-    - name: FFT Processor
-      link: /projects/fft_processor/
     - name: K-Dance Motion Game
       link: /projects/motion_game/
+    - name: FFT Processor
+      link: /projects/fft_processor/
     - name: AMBA_APB Bus & AXI4 Protocol
       link: /projects/amba_bus/
     - name: RISC-V CPU

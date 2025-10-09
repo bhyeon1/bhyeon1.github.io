@@ -1,6 +1,6 @@
 ---
 title: Microwave project
-order : 6
+order : 8
 subtitle: FPGA 기반 모터 구동형 전자레인지 기능 구현
 description: ""
 layout: page

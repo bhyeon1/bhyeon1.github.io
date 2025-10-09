@@ -1,6 +1,6 @@
 ---
 title: K-Dance Motion Game
-order : 2
+order : 1
 subtitle: VGA·FPGA 기반 실시간 이미지 처리로 구현한 동작 인식 게임 설계
 description: ""
 layout: page
