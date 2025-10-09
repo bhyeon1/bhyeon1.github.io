@@ -53,7 +53,7 @@ tags : [Vivado, FPGA, Verilog]
 
 ---
 
-<h1 style="font-size: 36px; font-weight: bold;">상세 설계</h1>
+<h1 style="font-size: 36px; font-weight: bold;">기본 모듈 설계</h1>
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">Top Module Blockdiagram</h2>
 <p style="font-size: 18px; line-height: 1.4; margin-left: 10px;">
@@ -87,7 +87,24 @@ tags : [Vivado, FPGA, Verilog]
 </ul>
 <img src="/img/watch/Uart.jpg" width="70%">
 
-<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">SR04 Module Blockdiagram</h2>
+---
+<h1 style="font-size: 36px; font-weight: bold;">SR04 모듈 설계</h1>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">동작 원리</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>Trigger 핀에 10us의 펄스 -> 초음파 발생</li>
+  <li>8 cycle 초음파 (40kHz) 송출</li>
+  <li>반사된 초음파가 Echo 핀 도달 시간 측정</li>
+  <li>Distance : 시간(us) x 속도(340m/s) / 2 </li>
+</ul>
+<img src="/img/watch/sr04_work.png" width="60%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">FSM</h2>
+<img src="/img/watch/sr04_fsm.png" width="80%">
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">ASM</h2>
+<img src="/img/watch/sr04_asm.png" width="80%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">Blockdiagram</h2>
 <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
   <li>Start_trigger : 시작 후 Trigger 신호 10us 동안 출력</li>
   <li>Tick_gen : 1us 단위 tick 생성</li>
@@ -96,7 +113,32 @@ tags : [Vivado, FPGA, Verilog]
 </ul>
 <img src="/img/watch/sr04.jpg" width="70%">
 
-<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">DHT11 Module Blockdiagram</h2>
+---
+
+<h1 style="font-size: 36px; font-weight: bold;">DHT11 모듈 설계</h1>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">통신 흐름</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>1. MCU에서 18ms이상의 Low 신호를 DHT11 센서로 보냄</li>
+  <li>2. DHT11 응답 (80us Low -> 80us HIGH)</li>
+  <li>3. DHT11에서 총 40 비트의 데이터를 MCU로 전송</li>
+</ul>
+<img src="/img/watch/dht11_work.png" width="40%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">비트 판별 방법</h2>
+<img src="/img/watch/dht11_bit.png" width="80%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">FSM</h2>
+<img src="/img/watch/dht11_fsm.png" width="60%">
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">ASM</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>1. 초기 구동 ASM 상태</li>
+  <li>2. 데이터 수신 ASM 상태</li>
+  <li>3. 데이터 유효성 검사 및 ASM 종료</li>
+</ul>
+<img src="/img/watch/dht11_asm.png" width="60%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">Blockdiagram</h2>
 <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
   <li>DHT11_CNTL : DHT11 센서 데이터 수신 FSM 제어</li>
   <li>FND_CNTL : 수신된 온습도 값 FND 출력</li>
@@ -283,3 +325,15 @@ tags : [Vivado, FPGA, Verilog]
   <li>FSM구조와 모듈화된 하드웨어 설계 방식에 대해 이해할 수 있었음.</li>
   <li>Timing violation과 같은 문제를 겪으면서 센서 제어를 위한 로직 구현 뿐만 아니라 하드웨어 상의 최적화 로직 및 타이밍 제어의 중요성을 깨달음.</li>
 </ul>
+
+---
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
+<div class="has-text-centered">
+  <a class="button is-dark is-rounded gh-btn"
+     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/Multi_Sensing_Watch"
+     target="_blank" rel="noopener"
+     style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
+    <span>GitHub</span>
+  </a>
+</div>
