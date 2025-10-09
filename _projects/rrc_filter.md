@@ -1,10 +1,10 @@
 ---
-title: RRC_Filter
+title: RRC Filter
 order : 7
-subtitle: ASIC 기반 512-Point FFT 프로세서 설계 및 FPGA 검증
+subtitle: ASIC 기반 RRC Filter 설계 및 검증
 description: ""
 layout: page
-permalink: /projects/fft_processor/
-image: /img/fft/fft.jpg
-tags : [ASIC, FPGA, VCS/Verdi, SystemVerilog, MATLAB]
+permalink: /projects/rrc_filter/
+image: /img/rrc_filter/title.png
+tags : [ASIC, VCS/Verdi, Verilog, MATLAB]
 ---
