@@ -185,6 +185,33 @@ tags : [Vivado, Vitis, FPGA, SystemVerilog]
 
 ---
 
+<h1 style="font-size: 36px; font-weight: bold;">AXI4-Lite 상세 설계</h1>
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">AXI4-Lite Signal</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>AW, W, B, AR, R은 채널의 개념. 각 채널은 단방향이고 분리. 즉, 이론상 같은 시간에 read, write 가능</li>
+  <li>transfer는 신호 하나를 의미</li>
+  <li>transaction은 한 채널의 주고 받는 신호들을 의미</li>
+</ul>
+
+<img src="/img/amba_bus/axi4_signal.png" width="80%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">AXI4-Lite protocol 통신 방식</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>모든 채널에 VALID, READY handshake가 존재</li>
+  <li>Source에서 Destination으로 보낼 때, VALID 신호를 HIGH로 같이 보내줌</li>
+  <li>Destination 쪽에서 잘 받았으면, Source 쪽으로 Ready 신호를 High로 전송</li>
+</ul>
+
+<img src="/img/amba_bus/axi4_protocol_way.png" width="90%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">AXI4-Lite protocol Blockdiagram</h2>
+
+<img src="/img/amba_bus/axi4_blockdiagram.png" width="80%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">AXI4-Lite protocol FSM</h2>
+
+<img src="/img/amba_bus/axi4_fsm.png" width="90%">
+
 <div id="lb" style="display:none;position:fixed;inset:0;z-index:9999;
   background:rgba(0,0,0,.82);backdrop-filter:saturate(120%) blur(2px);
   align-items:center;justify-content:center;padding:8px;overflow:auto;">
