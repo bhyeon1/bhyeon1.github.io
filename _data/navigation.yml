@@ -5,10 +5,12 @@
   dropdown:
     - name: FFT Processor
       link: /projects/fft_processor/
-    - name: RISC-V CPU
-      link: /projects/RV32I_CPU/
+    - name: K-Dance Motion Game
+      link: /projects/motion_game/
     - name: AMBA_APB Bus & AXI4 Protocol
       link: /projects/amba_bus/
+    - name: RISC-V CPU
+      link: /projects/RV32I_CPU/
     - name: The Strange Adventure
       link: /projects/game_project/
     - name: Multi Sensing Watch
