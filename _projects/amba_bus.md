@@ -210,7 +210,27 @@ tags : [Vivado, Vitis, FPGA, SystemVerilog]
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">AXI4-Lite protocol FSM</h2>
 
-<img src="/img/amba_bus/axi4_fsm.png" width="90%">
+<img src="/img/amba_bus/axi4_fsm.png" width="100%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">AXI4-Lite RTL Design</h2>
+
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>MicroBlaze CPU IP 사용</li>
+  <li>MicroBlaze는 200MHz clk을 사용하므로 이를 clock wizard를 통해 clk을 100MHz로 바꿔줌</li>
+  <li>AXI4_Lite Peripheral IP 사용</li>
+</ul>
+
+<img src="/img/amba_bus/axi4_rtl.png" width="100%">
+
+---
+
+<h1 style="font-size: 36px; font-weight: bold;">AXI4-Lite 시뮬레이션 및 검증</h1>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">Vitis를 통한 검증</h2>
+
+<img src="/img/amba_bus/axi4_vitis_1.png" width="30%">
+<img src="/img/amba_bus/axi4_vitis_2.png" width="80%">
+---
 
 <div id="lb" style="display:none;position:fixed;inset:0;z-index:9999;
   background:rgba(0,0,0,.82);backdrop-filter:saturate(120%) blur(2px);
