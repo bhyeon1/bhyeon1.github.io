@@ -284,7 +284,7 @@ assign total_sum = sum_p1 + sum_p2 + sum_p3 + sum_p4 + mult_weight[32];
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
 <div class="has-text-centered">
   <a class="button is-dark is-rounded gh-btn"
-     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/fft_processor"
+     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/rrc_filter"
      target="_blank" rel="noopener"
      style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
     <span>GitHub</span>
