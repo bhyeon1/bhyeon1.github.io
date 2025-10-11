@@ -228,9 +228,78 @@ tags : [Vivado, Vitis, FPGA, SystemVerilog]
 
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">Vitis를 통한 검증</h2>
 
-<img src="/img/amba_bus/axi4_vitis_1.png" width="30%">
-<img src="/img/amba_bus/axi4_vitis_2.png" width="80%">
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>Vitis : 내장형 Arm 프로세서에서 실행되는 호스트 애플리케이션 개발을 위한 독립형 내장형 소프트웨어 개발 패키지</li>
+  <li>AXI4-Lite의 GPIO, FND Peripheral test를 위해 간단한 C code 작성
+    <ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+      <li>GPIO는 Basys 3 보드의 LED와 연결하여 0.1초 간격으로 깜빡거림</li>
+      <li>FND는 0.1초마다 증가하는 counter값을 출력</li>  
+    </ul>
+  </li>
+</ul>
+
+<img src="/img/amba_bus/axi4_vitis.png" width="80%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">동작 영상</h2>
+
+<img src="/gif/amba_bus/axi4.gif" alt="AXI4 동작영상" width="600">
+
+
 ---
+
+<h1 style="font-size: 36px; font-weight: bold;">트러블 슈팅</h1>
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">1. GPIO Load/Write 오류</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>문제 상황 : GPIO 주변 장치에 접근할 때, 기대한 값 대신 X value가 찍힘</li>
+  <li>원인 분석 : APB Protocol에서 레지스터 접근이 word 단위 (4 Byte 정렬)로 이루어져야 함</li>
+  <li>해결 방법 : <storng>PADDR[3:2]로 수정</storng>하여 4 Byte 단위 레지스터에 정확히 매핑되도록 함</li>
+</ul>
+<img src="/img/amba_bus/troubleshooting1.png" width="70%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">2. UVM 기반 systemverilog RAM 검증 시 X value fail</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>문제 상황 : 실제 동작은 정상임에도 불구하고 FAIL (Dismatched Data) 메시지가 발생</li>
+  <li>원인 분석 : == 연산자는 x (unknown), z (high-impedance) 값을 동등 비교하지 못함. 즉, x == x라도 FALSE가 되어 FAIL 발생</li>
+  <li>해결 방법 : <storng>===</storng> 연산자를 사용하여 0/1 뿐만 아니라 x value도 동일하게 취급하여 비교 가능</li>
+</ul>
+<img src="/img/amba_bus/troubleshooting2.png" width="90%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">3. Uart Peripheral에서 rx 동작 오류</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>문제 상황 : Simulation에서는 rx_done이 잘 뜨지만, 머신 코드에 올렸을 때, Loop Back 응답 x</li>
+  <li>원인 분석 : Uart 모듈 자체에서 rx_done은 1 tick (10ns)을 내보냄. 처음 설계 구조에서는 rx_done, tx_done, tx_busy 자체를 slv_reg0에 넣어둠. 따라서, CPU가 rx_done 한 tick을 감지하지 못하면, 다시 PC로 Tx하는 동작 수행 X</li>
+  <li>해결 방법 : 따라서, rx_done 신호를 받을 때, 한 tick을 그대로 받는 것이 아니라 slv_reg0[4]에 1을 계속 저장해둠. CPU가 rx_data값을 읽었을 때, slv_reg0[4]를 다시 0으로 내려주는 방식으로 동작</li>
+</ul>
+<img src="/img/amba_bus/troubleshooting3.png" width="70%">
+
+---
+
+<h1 style="font-size: 36px; font-weight: bold;">결론 및 고찰</h1>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">느낀점</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li>RV32I CPU에 APB Bus를 붙이고, 주변 장치들을 직접 설계, 연동하면서 실제 MCU와 유사한 시스템을 구축해 봄.</li>
+  <li>APB Bus를 이용하여 메모리 맵 기반의 주변 장치 제어 구조를 구현함으로써, 임베디드 시스템에서 CPU와 주변 장치가 어떻게 상호작용하는지 이해할 수 있었음. </li>
+  <li>단순히 CPU와 메모리를 연결하는 수준을 넘어, 하드웨어와 소프트웨어가 메모리 맵을 통해 통합되는 방식을 직접 경험. </li>
+</ul>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">확장 가능성</h2>
+<ul style="font-size: 18px; line-height: 1.4; margin-left: 30px;">
+  <li><strong>Peripheral 확장</strong> : HC-SR04, DHT11 등 다양한 센서 확장.</li>
+  <li><strong>UART + FIFO</strong> : UART에 FIFO를 추가하여 더 큰 데이터 전송 및 버퍼링 기능 제공</li>
+</ul>
+
+---
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
+<div class="has-text-centered">
+  <a class="button is-dark is-rounded gh-btn"
+     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/fft_processor"
+     target="_blank" rel="noopener"
+     style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
+    <span>GitHub</span>
+  </a>
+</div>
 
 <div id="lb" style="display:none;position:fixed;inset:0;z-index:9999;
   background:rgba(0,0,0,.82);backdrop-filter:saturate(120%) blur(2px);

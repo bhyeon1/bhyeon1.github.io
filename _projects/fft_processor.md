@@ -212,7 +212,7 @@ tags : [ASIC, FPGA, VCS/Verdi, SystemVerilog, MATLAB]
 
   ---
 
-  <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
 <div class="has-text-centered">
   <a class="button is-dark is-rounded gh-btn"
      href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/fft_processor"
