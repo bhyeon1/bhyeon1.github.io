@@ -1,0 +1,62 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: mult_weight_reg_17__2_
+              (rising edge-triggered flip-flop clocked by cnt_clk)
+  Endpoint: sum_p3_reg_14_
+            (rising edge-triggered flip-flop clocked by cnt_clk)
+  Path Group: cnt_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock cnt_clk (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  mult_weight_reg_17__2_/CLK (SC7P5T_SDFFRQX4_CSC20L)     0.00       0.00 r
+  mult_weight_reg_17__2_/Q (SC7P5T_SDFFRQX4_CSC20L)      59.90      59.90 f
+  U511/S (SC7P5T_HAX4_CSC20L)                            36.62      96.52 r
+  U771/CO (SC7P5T_FAX2_A_CSC20L)                         32.07     128.58 r
+  U403/CO (SC7P5T_FAX2_A_CSC20L)                         33.44     162.03 r
+  U335/S (SC7P5T_FAX2_A_CSC20L)                          53.54     215.56 f
+  U1076/Z (SC7P5T_OR2X2_A_CSC20L)                        23.00     238.56 f
+  U752/Z (SC7P5T_AO21X2_CSC20L)                          22.56     261.12 f
+  U698/Z (SC7P5T_INVX2_CSC20L)                            8.57     269.69 r
+  U442/Z (SC7P5T_OA21X2_CSC20L)                          24.17     293.86 r
+  U443/Z (SC7P5T_INVX2_CSC20L)                            7.72     301.58 f
+  U380/Z (SC7P5T_AO21X2_CSC20L)                          24.48     326.07 f
+  U381/Z (SC7P5T_INVX2_CSC20L)                            8.30     334.36 r
+  U388/Z (SC7P5T_OA21X2_CSC20L)                          24.02     358.39 r
+  U515/Z (SC7P5T_INVX2_CSC20L)                            8.47     366.85 f
+  U465/Z (SC7P5T_INVX3_CSC20L)                            8.92     375.77 r
+  U423/Z (SC7P5T_OA21X2_CSC20L)                          23.72     399.49 r
+  U424/Z (SC7P5T_INVX2_CSC20L)                            5.75     405.24 f
+  U664/Z (SC7P5T_XNR2X1_CSC20L)                          36.98     442.22 r
+  sum_p3_reg_14_/D (SC7P5T_SDFFRQX4_CSC20L)               0.00     442.22 r
+  data arrival time                                                442.22
+
+  clock cnt_clk (rise edge)                             560.00     560.00
+  clock network delay (ideal)                             0.00     560.00
+  clock uncertainty                                     -50.00     510.00
+  sum_p3_reg_14_/CLK (SC7P5T_SDFFRQX4_CSC20L)             0.00     510.00 r
+  library setup time                                    -54.19     455.81
+  data required time                                               455.81
+  --------------------------------------------------------------------------
+  data required time                                               455.81
+  data arrival time                                               -442.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.59
+
+
+1

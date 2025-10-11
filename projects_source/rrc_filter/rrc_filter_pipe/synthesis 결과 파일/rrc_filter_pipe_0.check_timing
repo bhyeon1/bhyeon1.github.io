@@ -1,0 +1,43 @@
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+Warning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)
+--------------------
+data_in[6]
+data_in[5]
+data_in[4]
+data_in[3]
+data_in[2]
+data_in[1]
+data_in[0]
+
+Information: Checking unconstrained_endpoints...
+
+Warning: The following end-points are not constrained for maximum delay.
+
+End point
+---------------
+data_out[0]
+data_out[1]
+data_out[2]
+data_out[3]
+data_out[4]
+data_out[5]
+data_out[6]
+shift_din_reg_0__0_/D
+shift_din_reg_0__1_/D
+shift_din_reg_0__2_/D
+shift_din_reg_0__3_/D
+shift_din_reg_0__4_/D
+shift_din_reg_0__5_/D
+shift_din_reg_0__6_/D
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+1

@@ -1,0 +1,1140 @@
+ 
+****************************************
+Report : area
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Library(s) Used:
+
+    GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /pdk/GF22FDX_SC7P5T_116CPP_BASE_CSC20L_FDK_RELV02R80/db/GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
+
+Number of ports:                           16
+Number of nets:                          1943
+Number of cells:                         1709
+Number of combinational cells:           1248
+Number of sequential cells:               461
+Number of macros/black boxes:               0
+Number of buf/inv:                        418
+Number of references:                      64
+
+Combinational area:                734.210390
+Buf/Inv area:                      118.876800
+Noncombinational area:             959.992768
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  1694.203158
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+rrc_filter_pipe                   1694.2032    100.0  734.2104   959.9928  0.0000  rrc_filter_pipe
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                 734.2104   959.9928  0.0000
+
+1
+ 
+****************************************
+Report : qor
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+
+  Timing Path Group 'cnt_clk'
+  -----------------------------------
+  Levels of Logic:              17.00
+  Critical Path Length:        442.22
+  Critical Path Slack:          13.59
+  Critical Path Clk Period:    560.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:        -16.27
+  Total Hold Violation:       -802.22
+  No. of Hold Violations:      137.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:               1709
+  Buf/Inv Cell Count:             418
+  Buf Cell Count:                  36
+  Inv Cell Count:                 382
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      1248
+  Sequential Cell Count:          461
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:      734.210390
+  Noncombinational Area:   959.992768
+  Buf/Inv Area:            118.876800
+  Total Buffer Area:            30.90
+  Total Inverter Area:          87.97
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:              1694.203158
+  Design Area:            1694.203158
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          1943
+  Nets With Violations:          1934
+  Max Trans Violations:          1933
+  Max Cap Violations:               0
+  Max Fanout Violations:            1
+  -----------------------------------
+
+
+  Hostname: kccisynop2
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.54
+  Logic Optimization:                  1.03
+  Mapping Optimization:                9.29
+  -----------------------------------------
+  Overall Compile Time:               25.33
+  Overall Compile Wall Clock Time:    23.37
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 16.27  TNS: 802.22  Number of Violating Paths: 137
+
+  --------------------------------------------------------------------
+
+
+1
+ 
+****************************************
+Report : resources
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+
+Resource Report for this hierarchy in file
+        ../verilog/RRC_FILTER/rrc_filter_pipe.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_1        | DW01_sub       | width=8    | sub_mult_83_I2 (rrc_filter_pipe.v:83) |
+| sub_x_2        | DW01_sub       | width=8    | sub_mult_83_I5 (rrc_filter_pipe.v:83) |
+| sub_x_3        | DW01_sub       | width=9    | sub_mult_83_I8 (rrc_filter_pipe.v:83) |
+| mult_x_4       | DW_mult_tc     | a_width=7  | mult_83_I11 (rrc_filter_pipe.v:83) |
+         |                | b_width=4  |                            |
+| mult_x_5       | DW_mult_tc     | a_width=7  | mult_83_I13 (rrc_filter_pipe.v:83) |
+         |                | b_width=5  |                            |
+| mult_x_6       | DW_mult_tc     | a_width=7  | mult_83_I14 (rrc_filter_pipe.v:83) |
+         |                | b_width=6  |                            |
+| mult_x_7       | DW_mult_tc     | a_width=7  | mult_83_I15 (rrc_filter_pipe.v:83) |
+         |                | b_width=5  |                            |
+| mult_x_8       | DW_mult_tc     | a_width=7  | mult_83_I16 (rrc_filter_pipe.v:83) |
+         |                | b_width=8  |                            |
+| mult_x_9       | DW_mult_tc     | a_width=7  | mult_83_I17 (rrc_filter_pipe.v:83) |
+         |                | b_width=9  |                            |
+| mult_x_10      | DW_mult_tc     | a_width=7  | mult_83_I18 (rrc_filter_pipe.v:83) |
+         |                | b_width=8  |                            |
+| mult_x_11      | DW_mult_tc     | a_width=7  | mult_83_I19 (rrc_filter_pipe.v:83) |
+         |                | b_width=5  |                            |
+| mult_x_12      | DW_mult_tc     | a_width=7  | mult_83_I20 (rrc_filter_pipe.v:83) |
+         |                | b_width=6  |                            |
+| mult_x_13      | DW_mult_tc     | a_width=7  | mult_83_I21 (rrc_filter_pipe.v:83) |
+         |                | b_width=5  |                            |
+| mult_x_14      | DW_mult_tc     | a_width=7  | mult_83_I23 (rrc_filter_pipe.v:83) |
+         |                | b_width=4  |                            |
+| sub_x_15       | DW01_sub       | width=9    | sub_mult_83_I26 (rrc_filter_pipe.v:83) |
+| sub_x_16       | DW01_sub       | width=8    | sub_mult_83_I29 (rrc_filter_pipe.v:83) |
+| sub_x_17       | DW01_sub       | width=8    | sub_mult_83_I32 (rrc_filter_pipe.v:83) |
+| gte_x_18       | DW_cmp         | width=14   | gte_194 (rrc_filter_pipe.v:194) |
+| lte_x_19       | DW_cmp         | width=14   | lte_194 (rrc_filter_pipe.v:194) |
+| DP_OP_132J1_122_1326            |            |                            |
+|                | DP_OP_132J1_122_1326 |      |                            |
+| DP_OP_133J1_123_1326            |            |                            |
+|                | DP_OP_133J1_123_1326 |      |                            |
+| DP_OP_134J1_124_1326            |            |                            |
+|                | DP_OP_134J1_124_1326 |      |                            |
+| DP_OP_135J1_125_1326            |            |                            |
+|                | DP_OP_135J1_125_1326 |      |                            |
+| DP_OP_136J1_126_9919            |            |                            |
+|                | DP_OP_136J1_126_9919 |      |                            |
+=============================================================================
+
+Datapath Report for DP_OP_132J1_122_1326
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_132J1_122_1326 | add_172 (rrc_filter_pipe.v:172)                     |
+|                      | add_172_2 (rrc_filter_pipe.v:172)                   |
+|                      | add_172_3 (rrc_filter_pipe.v:172)                   |
+|                      | add_172_4 (rrc_filter_pipe.v:172)                   |
+|                      | add_172_5 (rrc_filter_pipe.v:172)                   |
+|                      | add_172_6 (rrc_filter_pipe.v:172)                   |
+|                      | add_172_7 (rrc_filter_pipe.v:172)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 16    |                                          |
+| I2    | PI   | Signed   | 16    |                                          |
+| I3    | PI   | Signed   | 16    |                                          |
+| I4    | PI   | Signed   | 16    |                                          |
+| I5    | PI   | Signed   | 16    |                                          |
+| I6    | PI   | Signed   | 16    |                                          |
+| I7    | PI   | Signed   | 16    |                                          |
+| I8    | PI   | Signed   | 16    |                                          |
+| O1    | PO   | Signed   | 20    | I1 + I2 + I3 + I4 + I5 + I6 + I7 + I8 (rrc_filter_pipe.v:172) |
+==============================================================================
+
+Datapath Report for DP_OP_133J1_123_1326
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_133J1_123_1326 | add_175 (rrc_filter_pipe.v:175)                     |
+|                      | add_175_2 (rrc_filter_pipe.v:175)                   |
+|                      | add_175_3 (rrc_filter_pipe.v:175)                   |
+|                      | add_175_4 (rrc_filter_pipe.v:175)                   |
+|                      | add_175_5 (rrc_filter_pipe.v:175)                   |
+|                      | add_175_6 (rrc_filter_pipe.v:175)                   |
+|                      | add_175_7 (rrc_filter_pipe.v:175)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 16    |                                          |
+| I2    | PI   | Signed   | 16    |                                          |
+| I3    | PI   | Signed   | 16    |                                          |
+| I4    | PI   | Signed   | 16    |                                          |
+| I5    | PI   | Signed   | 16    |                                          |
+| I6    | PI   | Signed   | 16    |                                          |
+| I7    | PI   | Signed   | 16    |                                          |
+| I8    | PI   | Signed   | 16    |                                          |
+| O1    | PO   | Signed   | 20    | I1 + I2 + I3 + I4 + I5 + I6 + I7 + I8 (rrc_filter_pipe.v:175) |
+==============================================================================
+
+Datapath Report for DP_OP_134J1_124_1326
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_134J1_124_1326 | add_178 (rrc_filter_pipe.v:178)                     |
+|                      | add_178_2 (rrc_filter_pipe.v:178)                   |
+|                      | add_178_3 (rrc_filter_pipe.v:178)                   |
+|                      | add_178_4 (rrc_filter_pipe.v:178)                   |
+|                      | add_178_5 (rrc_filter_pipe.v:178)                   |
+|                      | add_178_6 (rrc_filter_pipe.v:178)                   |
+|                      | add_178_7 (rrc_filter_pipe.v:178)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 16    |                                          |
+| I2    | PI   | Signed   | 16    |                                          |
+| I3    | PI   | Signed   | 16    |                                          |
+| I4    | PI   | Signed   | 16    |                                          |
+| I5    | PI   | Signed   | 16    |                                          |
+| I6    | PI   | Signed   | 16    |                                          |
+| I7    | PI   | Signed   | 16    |                                          |
+| I8    | PI   | Signed   | 16    |                                          |
+| O1    | PO   | Signed   | 20    | I1 + I2 + I3 + I4 + I5 + I6 + I7 + I8 (rrc_filter_pipe.v:178) |
+==============================================================================
+
+Datapath Report for DP_OP_135J1_125_1326
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_135J1_125_1326 | add_181 (rrc_filter_pipe.v:181)                     |
+|                      | add_181_2 (rrc_filter_pipe.v:181)                   |
+|                      | add_181_3 (rrc_filter_pipe.v:181)                   |
+|                      | add_181_4 (rrc_filter_pipe.v:181)                   |
+|                      | add_181_5 (rrc_filter_pipe.v:181)                   |
+|                      | add_181_6 (rrc_filter_pipe.v:181)                   |
+|                      | add_181_7 (rrc_filter_pipe.v:181)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 16    |                                          |
+| I2    | PI   | Signed   | 16    |                                          |
+| I3    | PI   | Signed   | 16    |                                          |
+| I4    | PI   | Signed   | 16    |                                          |
+| I5    | PI   | Signed   | 16    |                                          |
+| I6    | PI   | Signed   | 16    |                                          |
+| I7    | PI   | Signed   | 16    |                                          |
+| I8    | PI   | Signed   | 16    |                                          |
+| O1    | PO   | Signed   | 20    | I1 + I2 + I3 + I4 + I5 + I6 + I7 + I8 (rrc_filter_pipe.v:181) |
+==============================================================================
+
+Datapath Report for DP_OP_136J1_126_9919
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_136J1_126_9919 | add_187 (rrc_filter_pipe.v:187)                     |
+|                      | add_187_2 (rrc_filter_pipe.v:187)                   |
+|                      | add_187_3 (rrc_filter_pipe.v:187)                   |
+|                      | add_187_4 (rrc_filter_pipe.v:187)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 20    |                                          |
+| I2    | PI   | Signed   | 20    |                                          |
+| I3    | PI   | Signed   | 20    |                                          |
+| I4    | PI   | Signed   | 20    |                                          |
+| I5    | PI   | Signed   | 16    |                                          |
+| O1    | PO   | Signed   | 22    | I1 + I2 + I3 + I4 + I5 (rrc_filter_pipe.v:187) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'gte_194 (rrc_filter_pipe.v:194)' in design 'rrc_filter_pipe' breaks the datapath extraction because there is leakage due to truncation on the fanout of its driver 'add_187 (rrc_filter_pipe.v:187) add_187_2 (rrc_filter_pipe.v:187) add_187_3 (rrc_filter_pipe.v:187) add_187_4 (rrc_filter_pipe.v:187)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_1            | DW01_sub         | apparch (area)     |                |
+| sub_x_2            | DW01_sub         | apparch (area)     |                |
+| sub_x_3            | DW01_sub         | apparch (area)     |                |
+| mult_x_4           | DW_mult_tc       | apparch (area)     |                |
+| mult_x_5           | DW_mult_tc       | apparch (area)     |                |
+| mult_x_6           | DW_mult_tc       | apparch (area)     |                |
+| mult_x_7           | DW_mult_tc       | apparch (area)     |                |
+| mult_x_8           | DW_mult_tc       | pparch (area,speed)                 |
+| mult_x_9           | DW_mult_tc       | apparch (area)     |                |
+| mult_x_10          | DW_mult_tc       | pparch (area,speed)                 |
+| mult_x_11          | DW_mult_tc       | apparch (area)     |                |
+| mult_x_12          | DW_mult_tc       | apparch (area)     |                |
+| mult_x_13          | DW_mult_tc       | apparch (area)     |                |
+| mult_x_14          | DW_mult_tc       | apparch (area)     |                |
+| sub_x_15           | DW01_sub         | apparch (area)     |                |
+| sub_x_16           | DW01_sub         | apparch (area)     |                |
+| sub_x_17           | DW01_sub         | apparch (area)     |                |
+| gte_x_18           | DW_cmp           | apparch (area)     |                |
+| lte_x_19           | DW_cmp           | apparch (area)     |                |
+| DP_OP_132J1_122_1326                  |                    |                |
+|                    | DP_OP_132J1_122_1326 | str (area,speed)                |
+| DP_OP_133J1_123_1326                  |                    |                |
+|                    | DP_OP_133J1_123_1326 | str (area,speed)                |
+| DP_OP_134J1_124_1326                  |                    |                |
+|                    | DP_OP_134J1_124_1326 | str (area,speed)                |
+| DP_OP_135J1_125_1326                  |                    |                |
+|                    | DP_OP_135J1_125_1326 | str (area,speed)                |
+| DP_OP_136J1_126_9919                  |                    |                |
+|                    | DP_OP_136J1_126_9919 | str (area,speed)                |
+===============================================================================
+
+1
+ 
+****************************************
+Report : reference
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+SC7P5T_AN2X1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.348000       1      0.348000  
+SC7P5T_AN2X2_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.348000       1      0.348000  
+SC7P5T_AN2X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.417600      21      8.769600  
+SC7P5T_AN2X4_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.626400       1      0.626400  
+SC7P5T_AO21IAX1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.417600       5      2.088000  
+SC7P5T_AO21IAX2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.556800       3      1.670400  
+SC7P5T_AO21X1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.487200       1      0.487200  
+SC7P5T_AO21X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.487200      29     14.128800  
+SC7P5T_AO21X4_P_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.696000       1      0.696000  
+SC7P5T_AOI21X1_MR_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.348000      37     12.876000  
+SC7P5T_AOI21X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.556800      13      7.238400  
+SC7P5T_BUFX4_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.487200       1      0.487200  
+SC7P5T_BUFX6_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.696000       9      6.264000  
+SC7P5T_BUFX8_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.835200      21     17.539200  
+SC7P5T_BUFX12_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  1.322400       5      6.612000  
+SC7P5T_DFFRQX1_AS_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  1.461600      40     58.463998  n
+SC7P5T_DFFRQX4_S_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  1.948800     180    350.783994  n
+SC7P5T_FAX1_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  1.322400       2      2.644800  r
+SC7P5T_FAX2_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  1.461600     208    304.012789  r
+SC7P5T_FAX4_CSC20L GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  3.132000       1      3.132000  r
+SC7P5T_HAX4_CSC20L GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  2.227200      12     26.726400  r
+SC7P5T_HAX6_CSC20L GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  3.201600       2      6.403200  r
+SC7P5T_INVX1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.139200     136     18.931200  
+SC7P5T_INVX2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.208800     143     29.858400  
+SC7P5T_INVX3_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.278400      34      9.465600  
+SC7P5T_INVX4_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.348000      44     15.312000  
+SC7P5T_INVX6_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.487200      19      9.256800  
+SC7P5T_INVX8_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.626400       1      0.626400  
+SC7P5T_INVX12_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.904800       5      4.524000  
+SC7P5T_MUX2X1_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.556800       2      1.113600  
+SC7P5T_ND2IAX4_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.765600       1      0.765600  
+SC7P5T_ND2X1_MR_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.208800     101     21.088800  
+SC7P5T_ND2X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.348000      54     18.791999  
+SC7P5T_ND2X3_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.487200       2      0.974400  
+SC7P5T_ND2X6_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.904800       2      1.809600  
+SC7P5T_NR2X1_MR_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.208800      17      3.549600  
+SC7P5T_NR2X2_MR_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.348000      26      9.048000  
+SC7P5T_NR2X3_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.487200      43     20.949600  
+SC7P5T_NR2X4_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.626400       5      3.132000  
+SC7P5T_NR2X8_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  1.183200       1      1.183200  
+SC7P5T_NR3X4_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.904800       1      0.904800  
+SC7P5T_OA21X1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.487200       7      3.410400  
+SC7P5T_OA21X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.556800      37     20.601600  
+SC7P5T_OA21X4_P_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.696000       1      0.696000  
+SC7P5T_OAI21X1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.348000      20      6.960000  
+SC7P5T_OAI21X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.556800       8      4.454400  
+SC7P5T_OAI21X3_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.765600       1      0.765600  
+SC7P5T_OR2X1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.348000       2      0.696000  
+SC7P5T_OR2X2_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.348000      54     18.791999  
+SC7P5T_OR2X4_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.626400       3      1.879200  
+SC7P5T_OR2X4_P_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.556800       1      0.556800  
+SC7P5T_OR3X1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.417600       1      0.417600  
+SC7P5T_OR3X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.487200       2      0.974400  
+SC7P5T_SDFFRQX1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  2.018400       1      2.018400  n
+SC7P5T_SDFFRQX2_A_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  1.879200       6     11.275200  n
+SC7P5T_SDFFRQX4_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  2.296800     234    537.451176  n
+SC7P5T_TIELOX1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.139200       1      0.139200  
+SC7P5T_XNR2X1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.765600      30     22.968001  
+SC7P5T_XNR2X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.765600      18     13.780800  
+SC7P5T_XNR2X4_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  1.531200       3      4.593600  
+SC7P5T_XNR2X4_P_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.904800       2      1.809600  
+SC7P5T_XNR3X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  1.322400       2      2.644800  
+SC7P5T_XOR2X1_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.765600      14     10.718400  
+SC7P5T_XOR2X2_CSC20L
+                   GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+                                  0.765600      30     22.968001  
+-----------------------------------------------------------------------------
+Total 64 references                                  1694.203158
+1
+ 
+****************************************
+Report : net fanout
+        -threshold 1000
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+
+
+Attributes:
+   dr - drc disabled
+    c - annotated capacitance
+    d - dont_touch
+    i - ideal_net
+    I - ideal_network
+    p - includes pin load
+    r - annotated resistance
+    h - high fanout
+
+Net                 Fanout   Attributes   Capacitance   Driver
+--------------------------------------------------------------------------------
+1
+-----------------------
+-- I/O timing report --
+-----------------------
+
+****************************************
+From : clk
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: clk (clock source 'cnt_clk')
+  Endpoint: sum_p2_reg_0_/CLK (internal pin)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                  500.00     500.00 r
+  clk (in)                                                0.00     500.00 r
+  sum_p2_reg_0_/CLK (SC7P5T_DFFRQX1_AS_CSC20L)            0.00     500.00 r
+  data arrival time                                                500.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+From : rstn
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: rstn (input port)
+  Endpoint: sum_p2_reg_0_/RESET (internal pin)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  rstn (in)                                               0.00       0.00 r
+  sum_p2_reg_0_/RESET (SC7P5T_DFFRQX1_AS_CSC20L)          0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+From : data_in[6]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_in[6] (input port)
+  Endpoint: shift_din_reg_0__6_
+            (rising edge-triggered flip-flop clocked by cnt_clk)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  data_in[6] (in)                                         0.00       0.00 r
+  shift_din_reg_0__6_/D (SC7P5T_SDFFRQX4_CSC20L)          0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+From : data_in[5]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_in[5] (input port)
+  Endpoint: shift_din_reg_0__5_
+            (rising edge-triggered flip-flop clocked by cnt_clk)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  data_in[5] (in)                                         0.00       0.00 r
+  shift_din_reg_0__5_/D (SC7P5T_SDFFRQX4_CSC20L)          0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+From : data_in[4]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_in[4] (input port)
+  Endpoint: shift_din_reg_0__4_
+            (rising edge-triggered flip-flop clocked by cnt_clk)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  data_in[4] (in)                                         0.00       0.00 r
+  shift_din_reg_0__4_/D (SC7P5T_SDFFRQX4_CSC20L)          0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+From : data_in[3]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_in[3] (input port)
+  Endpoint: shift_din_reg_0__3_
+            (rising edge-triggered flip-flop clocked by cnt_clk)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  data_in[3] (in)                                         0.00       0.00 r
+  shift_din_reg_0__3_/D (SC7P5T_SDFFRQX4_CSC20L)          0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+From : data_in[2]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_in[2] (input port)
+  Endpoint: shift_din_reg_0__2_
+            (rising edge-triggered flip-flop clocked by cnt_clk)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  data_in[2] (in)                                         0.00       0.00 r
+  shift_din_reg_0__2_/D (SC7P5T_SDFFRQX4_CSC20L)          0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+From : data_in[1]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_in[1] (input port)
+  Endpoint: shift_din_reg_0__1_
+            (rising edge-triggered flip-flop clocked by cnt_clk)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  data_in[1] (in)                                         0.00       0.00 r
+  shift_din_reg_0__1_/D (SC7P5T_SDFFRQX4_CSC20L)          0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+From : data_in[0]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_in[0] (input port)
+  Endpoint: shift_din_reg_0__0_
+            (rising edge-triggered flip-flop clocked by cnt_clk)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  data_in[0] (in)                                         0.00       0.00 r
+  shift_din_reg_0__0_/D (SC7P5T_SDFFRQX4_CSC20L)          0.00       0.00 r
+  data arrival time                                                  0.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+To : data_out[6]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_out_reg_6_
+              (rising edge-triggered flip-flop clocked by cnt_clk)
+  Endpoint: data_out[6]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  data_out_reg_6_/CLK (SC7P5T_SDFFRQX4_CSC20L)            0.00       0.00 r
+  data_out_reg_6_/Q (SC7P5T_SDFFRQX4_CSC20L)             57.20      57.20 f
+  data_out[6] (out)                                       0.00      57.20 f
+  data arrival time                                                 57.20
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+To : data_out[5]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_out_reg_5_
+              (rising edge-triggered flip-flop clocked by cnt_clk)
+  Endpoint: data_out[5]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  data_out_reg_5_/CLK (SC7P5T_SDFFRQX4_CSC20L)            0.00       0.00 r
+  data_out_reg_5_/Q (SC7P5T_SDFFRQX4_CSC20L)             57.20      57.20 f
+  data_out[5] (out)                                       0.00      57.20 f
+  data arrival time                                                 57.20
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+To : data_out[4]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_out_reg_4_
+              (rising edge-triggered flip-flop clocked by cnt_clk)
+  Endpoint: data_out[4]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  data_out_reg_4_/CLK (SC7P5T_SDFFRQX1_CSC20L)            0.00       0.00 r
+  data_out_reg_4_/Q (SC7P5T_SDFFRQX1_CSC20L)             52.11      52.11 f
+  data_out[4] (out)                                       0.00      52.11 f
+  data arrival time                                                 52.11
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+To : data_out[3]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_out_reg_3_
+              (rising edge-triggered flip-flop clocked by cnt_clk)
+  Endpoint: data_out[3]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  data_out_reg_3_/CLK (SC7P5T_SDFFRQX2_A_CSC20L)          0.00       0.00 r
+  data_out_reg_3_/Q (SC7P5T_SDFFRQX2_A_CSC20L)           58.17      58.17 f
+  data_out[3] (out)                                       0.00      58.17 f
+  data arrival time                                                 58.17
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+To : data_out[2]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_out_reg_2_
+              (rising edge-triggered flip-flop clocked by cnt_clk)
+  Endpoint: data_out[2]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  data_out_reg_2_/CLK (SC7P5T_SDFFRQX2_A_CSC20L)          0.00       0.00 r
+  data_out_reg_2_/Q (SC7P5T_SDFFRQX2_A_CSC20L)           58.17      58.17 f
+  data_out[2] (out)                                       0.00      58.17 f
+  data arrival time                                                 58.17
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+To : data_out[1]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_out_reg_1_
+              (rising edge-triggered flip-flop clocked by cnt_clk)
+  Endpoint: data_out[1]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  data_out_reg_1_/CLK (SC7P5T_SDFFRQX2_A_CSC20L)          0.00       0.00 r
+  data_out_reg_1_/Q (SC7P5T_SDFFRQX2_A_CSC20L)           58.17      58.17 f
+  data_out[1] (out)                                       0.00      58.17 f
+  data arrival time                                                 58.17
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+****************************************
+To : data_out[0]
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rrc_filter_pipe
+Version: V-2023.12-SP5-4
+Date   : Thu Jul 17 14:18:14 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: data_out_reg_0_
+              (rising edge-triggered flip-flop clocked by cnt_clk)
+  Endpoint: data_out[0]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  data_out_reg_0_/CLK (SC7P5T_SDFFRQX2_A_CSC20L)          0.00       0.00 r
+  data_out_reg_0_/Q (SC7P5T_SDFFRQX2_A_CSC20L)           58.17      58.17 f
+  data_out[0] (out)                                       0.00      58.17 f
+  data arrival time                                                 58.17
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

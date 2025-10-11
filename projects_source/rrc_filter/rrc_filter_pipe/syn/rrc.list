@@ -1,0 +1,5 @@
+lappend search_path  ../verilog
+set net_list "\
+../verilog/RRC_FILTER/rrc_filter_pipe.v\
+"
+ analyze -format verilog -library WORK $net_list

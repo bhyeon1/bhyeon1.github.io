@@ -1,0 +1,59 @@
+Loading db file '/pdk/GF22FDX_SC7P5T_116CPP_BASE_CSC20L_FDK_RELV02R80/db/GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C.db'
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Updating design information... (UID-85)
+Warning: Design 'rrc_filter_pipe' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+Warning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)
+--------------------
+data_in[6]
+data_in[5]
+data_in[4]
+data_in[3]
+data_in[2]
+data_in[1]
+data_in[0]
+
+Information: Checking unconstrained_endpoints...
+
+Warning: The following end-points are not constrained for maximum delay.
+
+End point
+---------------
+data_out[0]
+data_out[1]
+data_out[2]
+data_out[3]
+data_out[4]
+data_out[5]
+data_out[6]
+mult_weight_reg[10][0]/next_state
+mult_weight_reg[12][0]/next_state
+mult_weight_reg[13][0]/next_state
+mult_weight_reg[13][1]/next_state
+mult_weight_reg[14][0]/next_state
+mult_weight_reg[16][0]/next_state
+mult_weight_reg[16][1]/next_state
+mult_weight_reg[18][0]/next_state
+mult_weight_reg[19][0]/next_state
+mult_weight_reg[19][1]/next_state
+mult_weight_reg[20][0]/next_state
+mult_weight_reg[22][0]/next_state
+shift_din_reg[0][0]/next_state
+shift_din_reg[0][1]/next_state
+shift_din_reg[0][2]/next_state
+shift_din_reg[0][3]/next_state
+shift_din_reg[0][4]/next_state
+shift_din_reg[0][5]/next_state
+shift_din_reg[0][6]/next_state
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+1

@@ -139,7 +139,7 @@ tags : [ASIC, VCS/Verdi, Verilog, Systemverilog, MATLAB]
 
 <img src="/img/rrc_filter/fixed_point.png" width="70%">
 
-<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">Timing 만족을 위한 Pipe 방식 설계</h2>
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">Timing 만족을 위한 Pipe 방식 설계 (개선 버전)</h2>
 
 <img src="/img/rrc_filter/pipe.png" width="70%">
 
@@ -172,7 +172,124 @@ end
 <p style="font-size: 18px; line-height: 1.4; margin-left: 10px;">
 입력 벡터에 따른 출력 벡터 확인 -> <b>MATLAB결과와 RTL 시뮬레이션 결과가 일치하는 것을 확인</b>
 </p>
-<img src="/img/rrc_filter/matlab_vs_rtl.png" width="60%">
+<img src="/img/rrc_filter/matlab_vs_rtl.png" width="40%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">RRC 필터(고정소수점 RTL) 출력의 Welch 파워 스펙트럼 결과</h2>
+
+<img src="/img/rrc_filter/psd_welch.png" width="60%">
+---
+
+<h1 style="font-size: 36px; font-weight: bold;">트러블 슈팅</h1>
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">1. 문제 상황 : Setup Timing Violation</h2>
+<p style="font-size: 18px; line-height: 1.4; margin-left: 10px;">Synthesis 결과 Setup timing violation이 발생</p>
+<img src="/img/rrc_filter/slack.png" width="60%">
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">2. 원인 분석 : 곱셈과 덧셈 delay가 합쳐져 클럭 주기보다 path가 길어짐.</h2>
+
+```verilog
+// 기존 설계
+always @(*) begin
+	for (i = 32; i >= 0; i = i - 1 ) begin
+		mult_weight[i] = shift_din[i] * coeff(i);
+	end
+
+	sum = 0;
+	for (i = 0; i <= 32; i = i + 1)
+		sum = sum + mult_weight[i];
+
+	sum = sum >>> 8;
+end
+```
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">3. 해결 방법 : 2단 파이프 레지스터 삽입.</h2>
+
+```verilog
+// Stage 1 (Multiply stage): RRC Filter의 계수를 곱해준 값을 저장.
+always @(posedge clk or negedge rstn) begin
+	if (~rstn) begin
+		for (i = 32; i >= 0; i = i - 1) begin
+			mult_weight[i] <= 0;
+		end
+	end else begin
+		for (i = 32; i >= 0; i = i - 1) begin
+			mult_weight[i] <= shift_din[i] * coeff(i);
+		end
+	end
+end
+
+// Stage 2 (Partial sums): 33개의 덧셈을 8개씩 묶어서 부분합 4개를 저장.
+always @(posedge clk or negedge rstn) begin
+	if (~rstn) begin
+		sum_p1 <= 0;
+		sum_p2 <= 0;
+		sum_p3 <= 0;
+		sum_p4 <= 0;
+	end else begin
+		sum_p1 <= mult_weight[0] + mult_weight[1] + mult_weight[2] + mult_weight[3] + 
+				  mult_weight[4] + mult_weight[5] + mult_weight[6] + mult_weight[7];
+
+		sum_p2 <= mult_weight[8] + mult_weight[9] + mult_weight[10] + mult_weight[11] + 
+				  mult_weight[12] + mult_weight[13] + mult_weight[14] + mult_weight[15];
+
+		sum_p3 <= mult_weight[16] + mult_weight[17] + mult_weight[18] + mult_weight[19] + 
+				  mult_weight[20] + mult_weight[21] + mult_weight[22] + mult_weight[23];
+
+		sum_p4 <= mult_weight[24] + mult_weight[25] + mult_weight[26] + mult_weight[27] + 
+				  mult_weight[28] + mult_weight[29] + mult_weight[30] + mult_weight[31];
+	end
+end
+
+assign total_sum = sum_p1 + sum_p2 + sum_p3 + sum_p4 + mult_weight[32];
+```
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">4. 해결 결과</h2>
+
+<!-- 갤러리 #1 -->
+<div class="demo-imgs columns is-multiline is-mobile">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/img/rrc_filter/slack_met.png' | relative_url }}" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/img/rrc_filter/slack_met.png' | relative_url }}"
+             alt="slack_met" loading="lazy" decoding="async"
+             style="display:block;margin:0 auto;width:100%;max-width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">Setup timing Pass</div>
+    </a>
+  </div>
+
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <a href="{{ '/img/rrc_filter/matlab_vs_rtl_pipe.png' | relative_url }}" rel="noopener">
+      <figure class="image" style="border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12)">
+        <img src="{{ '/img/rrc_filter/matlab_vs_rtl_pipe.png' | relative_url }}"
+             alt="matlab_vs_rtl_pipe" loading="lazy" decoding="async"
+             style="display:block;margin:0 auto;width:70%;max-width:100%;height:auto;">
+      </figure>
+      <div style="font-size:18px;margin-top:.4em;text-align:center;">2단 pipe로 인한 결과 값 2 clk 밀림</div>
+    </a>
+  </div>
+</div>
+
+---
+
+ <h1 style="font-size: 36px; font-weight: bold;">느낀점</h1>
+
+ <ul style="font-size:18px;line-height:1.6;margin-left:18px;">
+      <li><b>실수→정수(고정소수점) 감각</b>: 비트 나누기(정수/소수), 반올림·포화 설정으로 모델과 하드웨어 결과를 맞추는 방법을 익힘.</li>
+      <li><b>타이밍=경로 쪼개기</b>: 중간 레지스터(파이프라인)와 부분합으로 조합 경로를 짧게 만들어 타이밍을 만족시킴.</li>
+ </ul>
+
+---
+
+<h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
+<div class="has-text-centered">
+  <a class="button is-dark is-rounded gh-btn"
+     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/fft_processor"
+     target="_blank" rel="noopener"
+     style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
+    <span>GitHub</span>
+  </a>
+</div>
 
 
 
