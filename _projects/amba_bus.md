@@ -294,7 +294,7 @@ tags : [Vivado, Vitis, FPGA, SystemVerilog]
 <h2 style="font-size: 22px; font-weight: bold; margin-top: 1.6em;">GitHub Source</h2>
 <div class="has-text-centered">
   <a class="button is-dark is-rounded gh-btn"
-     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/fft_processor"
+     href="https://github.com/bhyeon1/bhyeon1.github.io/tree/main/projects_source/amba_bus"
      target="_blank" rel="noopener"
      style="padding:10px 48px; border-radius:9999px; display:inline-flex; justify-content:center;">
     <span>GitHub</span>
